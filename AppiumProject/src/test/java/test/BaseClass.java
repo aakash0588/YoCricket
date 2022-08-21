@@ -30,7 +30,7 @@ import pages.LoginOtpPageElement;
 
 public class BaseClass {
 	
-	//firstcommit
+	
 	  AppiumDriver<MobileElement> driver; 
 	  LoginOtpPageElement lop;
 	  
