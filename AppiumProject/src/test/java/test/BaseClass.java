@@ -46,12 +46,12 @@ public class BaseClass {
 	  //= new  AppiumServiceBuilder().withAppiumJS(new
 			  //File("C:\\Program Files\\Appium Server GUI\\resources\\app\\node_modules\\appium\\build\\lib\\main.js" )).withIPAddress("127.0.0.1").usingPort(4723).build();
 	  
-	  @BeforeTest 
+	  @BeforeTest (alwaysRun=true)
 	  public void setup() throws MalformedURLException, InterruptedException {
 	  
 	   
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\eclipse-workspace\\AppiumProject\\src\\test\\java\\resources\\yoCricket (4).apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yoCricket (4).apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android SDK built for x86_64");
@@ -70,7 +70,7 @@ public class BaseClass {
 	  
 	  //=============================================Login & OTP  Section============================================
 	  
-	@Test
+	@Test (groups= {"Smoke"})
 	public void internetOffTest() throws InterruptedException 
 	{
 		try 
