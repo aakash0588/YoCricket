@@ -14,6 +14,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -49,12 +50,12 @@ public class BaseClass {
 	  @BeforeTest (alwaysRun=true)
 	  public void setup() throws MalformedURLException, InterruptedException {
 	  
-	   
+		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yoCricket (4).apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yoCricket (5).apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
-	  caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android SDK built for x86_64");
+	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
 	  caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
 	  caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 	  caps.setCapability("autoGrantPermissions", "true");
@@ -75,7 +76,9 @@ public class BaseClass {
 	{
 		try 
 		{
+			Thread.sleep(2000);
 			lop.countryCodeDropdown();
+			System.out.println("Test Aakash");
 		}
 		catch(Exception e)
 		{
@@ -123,7 +126,7 @@ public class BaseClass {
 		
 	}
 	
-	@Test
+	@Test(groups= {"Smoke"})
 	public void VerifyCountryDropdown() throws InterruptedException 
 	{					
 		lop.countryCodeDropdown();
@@ -185,11 +188,11 @@ public class BaseClass {
 		//lop.ClickToUploadMainPhoto();
 		//Thread.sleep(4000); 
 		lop.TournamentNameTextbox("IPL123#");
-		Thread.sleep(2000); 
+		Thread.sleep(3000); 
 		lop.LocationNameTextbox();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.ArenaNameTextbox();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.scrollPage();
 		Thread.sleep(3000); 
 		lop.OrganiserNameTextbox("LionsClub123#");
@@ -197,13 +200,13 @@ public class BaseClass {
 		lop.OrganiserContactTextbox("9825964420");
 		Thread.sleep(3000);
 		lop.createtournamentStartDateIcon().click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.createtournamentSelectStartDate("20 August 2022");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.createtournamentSelecrStartDateOKButton().click(); 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.TournamentCategoryclick();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.CreateTournamentButtonclick();
 		Thread.sleep(2000);		 
 	}
