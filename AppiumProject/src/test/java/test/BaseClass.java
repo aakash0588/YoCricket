@@ -21,6 +21,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.FindsByAndroidUIAutomator;
+import io.appium.java_client.HidesKeyboard;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -35,7 +36,7 @@ public class BaseClass {
 	  AppiumDriver<MobileElement> driver; 
 	  LoginOtpPageElement lop;
 	  
-	  public String getOtpButton2="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup";
+	  public String getOtpButton2="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView";
 	  public String submitOtp="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup";
 	  public String mobileNumbarManadatoryMessage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
 	  public String mobileNumberMaxDigitMessage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
@@ -52,7 +53,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yoCricket (5).apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yoCricket (6).apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -126,7 +127,7 @@ public class BaseClass {
 		
 	}
 	
-	@Test(groups= {"Smoke"})
+	@Test
 	public void VerifyCountryDropdown() throws InterruptedException 
 	{					
 		lop.countryCodeDropdown();
@@ -138,6 +139,7 @@ public class BaseClass {
 		Thread.sleep(3000); 
 		//India (+91)
 		driver.findElement(By.className("android.widget.TextView")).click();
+		Thread.sleep(3000); 
 		String code = driver.findElement(By.xpath(countryCode)).getText();
 		assertEquals(code,"+91", "Code is not match with expected");
 		String ne= driver.findElement(By.xpath(countryCode)).getAttribute("clickable");
@@ -153,6 +155,46 @@ public class BaseClass {
 		lop.continueAsGuestpathlinkPresent();
 		String te = lop.continueAsGuestpathlinkText();
 		assertEquals(te,"Continue as Guest", "Text is not correct");
+	}
+	
+	@Test
+	public void VerifyInvalidOTP() throws InterruptedException 
+	{	
+		
+		lop.countryCodeDropdown();
+		Thread.sleep(2000);
+		lop.countryCodeSelection();
+		Thread.sleep(2000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(2000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","7","4");
+		String invalidAlertMsg = lop.VerifyInalidOtpMessage();
+		assertEquals(invalidAlertMsg,"Please enter a valid OTP.", "Text is not correct");
+		
+		lop.validOtpAlertOKButtonclick();
+		Thread.sleep(3000);
+		}
+	
+	@Test
+	public void FirstTimeLoginFieldsVerify() throws InterruptedException 
+	{	
+		
+		lop.countryCodeDropdown();
+		Thread.sleep(2000);
+		lop.countryCodeSelection();
+		Thread.sleep(2000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(2000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+	    Thread.sleep(3000);
+		
+		//lop.firstNameTextbox();
+		//lop.LastNameTextbox();
+		lop.updateButtonclick();
 	}
 		
 	//===================================Tournament Section==========================================//
@@ -170,29 +212,29 @@ public class BaseClass {
 		lop.getOTPButton();
 		Thread.sleep(4000);
 		lop.otp("1","2","3","4");
-		//String invalidAlertMsg = lop.VerifyInalidOtpMessage();
-		//assertEquals(invalidAlertMsg,"Please enter a valid OTP.", "Text is not correct");
-		
-		//lop.validOtpAlertOKButtonclick();
-		//Thread.sleep(3000);
+	    Thread.sleep(3000);
 		
 		//lop.firstNameTextbox();
+		//Thread.sleep(2000); 
 		//lop.LastNameTextbox();
+		//Thread.sleep(2000); 
+		//driver.hideKeyboard();
 		//lop.updateButtonclick();
+		Thread.sleep(3000); 
 		lop.MenuPathclick();
-		Thread.sleep(2000); 
+		Thread.sleep(3000); 
 		lop.CreateTournamentLinkclick();
 		Thread.sleep(3000); 
-		//lop.UploadProfilePhoto();
-		//Thread.sleep(4000); 
-		//lop.ClickToUploadMainPhoto();
-		//Thread.sleep(4000); 
+		lop.UploadProfilePhoto();
+		Thread.sleep(4000); 
+		lop.ClickToUploadMainPhoto();
+		Thread.sleep(4000); 
 		lop.TournamentNameTextbox("IPL123#");
 		Thread.sleep(3000); 
 		lop.LocationNameTextbox();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		lop.ArenaNameTextbox();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		lop.scrollPage();
 		Thread.sleep(3000); 
 		lop.OrganiserNameTextbox("LionsClub123#");
@@ -201,7 +243,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.createtournamentStartDateIcon().click();
 		Thread.sleep(3000);
-		lop.createtournamentSelectStartDate("20 August 2022");
+		lop.createtournamentSelectStartDate("11 September 2022");
 		Thread.sleep(3000);
 		lop.createtournamentSelecrStartDateOKButton().click(); 
 		Thread.sleep(3000);
@@ -228,11 +270,12 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TournamentAboutTab();
 		Thread.sleep(3000); 
@@ -242,7 +285,7 @@ public class BaseClass {
 		Thread.sleep(4000); 
 		lop.EditTornamentUploadProfilePhoto();
 		Thread.sleep(4000); 
-		lop.EditTournamentNameTextbox("IPL123#");
+		lop.EditTournamentNameTextbox("IPL123##");
 		Thread.sleep(2000); 
 		lop.EditLocationNameTextbox();
 		Thread.sleep(2000);
@@ -250,13 +293,13 @@ public class BaseClass {
 		Thread.sleep(2000);
 		lop.scrollPage();
 		Thread.sleep(3000); 
-		lop.EditOrganiserNameTextbox("LionsClub123#");
+		lop.EditOrganiserNameTextbox("LionsClub123##");
 		Thread.sleep(2000); 
-		lop.EditOrganiserContactTextbox("9825964420");
+		lop.EditOrganiserContactTextbox("9825964421");
 		Thread.sleep(3000);
 		lop.EdittournamentStartDateIcon().click();
 		Thread.sleep(2000);
-		lop.createtournamentSelectStartDate("20 August 2022");
+		lop.createtournamentSelectStartDate("11 September 2022");
 		Thread.sleep(2000);
 		lop.createtournamentSelecrStartDateOKButton().click(); 
 		Thread.sleep(2000);
@@ -283,11 +326,12 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TournamentAboutTab();
 		Thread.sleep(3000); 
@@ -311,7 +355,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.EdittournamentStartDateIcon().click();
 		Thread.sleep(2000);
-		lop.createtournamentSelectStartDate("20 August 2022");
+		lop.createtournamentSelectStartDate("12 September 2022");
 		Thread.sleep(2000);
 		lop.createtournamentSelecrStartDateOKButton().click(); 
 		Thread.sleep(2000);
@@ -367,6 +411,8 @@ public class BaseClass {
 		Thread.sleep(2000);
 		lop.getOTPButton();
 		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		Thread.sleep(4000);
 		lop.MenuPathclick();
 		Thread.sleep(4000); 
 		lop.CreateTournamentLinkclick();
@@ -384,6 +430,8 @@ public class BaseClass {
 		lop.privacyPolicyCheckbox();
 		Thread.sleep(2000);
 		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
 		Thread.sleep(4000);
 		lop.MenuPathclick();
 		Thread.sleep(4000); 
@@ -407,11 +455,12 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TournamentAboutTab();
 		Thread.sleep(3000); 
@@ -438,11 +487,11 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
 		Thread.sleep(2000);
@@ -480,7 +529,7 @@ public class BaseClass {
 		Thread.sleep(6000);
 		lop.SelectOurTornamentClick();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
 		Thread.sleep(2000);
@@ -520,11 +569,11 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
 		Thread.sleep(3000);
@@ -562,7 +611,7 @@ public class BaseClass {
 		Thread.sleep(6000);
 		lop.SelectOurTornamentClick();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
 		Thread.sleep(3000);
@@ -602,25 +651,26 @@ public class BaseClass {
 		lop.otp("1","2","3","4");
 		Thread.sleep(3000);
 		lop.MenuPathclick();
-		Thread.sleep(2000); 
+		Thread.sleep(4000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
 		lop.scrollPage();
 		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.TeamMenuClick();
-		//Thread.sleep(2000);
+		Thread.sleep(3000);
 		//lop.OKButtonAddNewPlayerScreen();
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
 		lop.TeamOneClick();
-		Thread.sleep(4000);
-		//lop.OKButtonAddNewPlayerScreen();
+		Thread.sleep(5000);
+		lop.OKButtonAddNewPlayerScreen();
 		//Thread.sleep(3000);
 		// Make debug point here and click on add player icon manually 
-		lop.addplayerIconOnEditPageClick();
+		//lop.addplayerIconOnEditPageClick();
 		Thread.sleep(4000);
 		lop.PlayerMobileNumber("1236956124");
 		Thread.sleep(2000);
@@ -663,7 +713,7 @@ public class BaseClass {
 		Thread.sleep(6000);
 		lop.SelectOurTornamentClick();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.TeamMenuClick();
 		//Thread.sleep(2000);
@@ -705,11 +755,12 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.TeamMenuClick();
 		//Thread.sleep(2000);
@@ -719,8 +770,8 @@ public class BaseClass {
 		Thread.sleep(4000);
 		lop.ClickOnEditPlayer();
 		Thread.sleep(4000);
-		lop.EditPagePlayerMobileNumber("7788552233");
-		Thread.sleep(2000);
+		//lop.EditPagePlayerMobileNumber("7788552233");
+		//Thread.sleep(2000);
 		lop.EditPagePlayerFirstName("VVvv");
 		Thread.sleep(2000);
 		lop.EditPagePlayerLastName("Laxxx");
@@ -750,7 +801,7 @@ public class BaseClass {
 		Thread.sleep(6000);
 		lop.SelectOurTornamentClick();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.TeamMenuClick();
 		//Thread.sleep(2000);
@@ -785,16 +836,19 @@ public class BaseClass {
 		Thread.sleep(2000);
 		lop.getOTPButton();
 		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		Thread.sleep(3000);
 		//put debug , enter OTP and go further
 		lop.MenuPathclick();
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
-		lop.OKButtonOFAddNewMatchClick();
+		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.addIconForAddMatchClick();
 		Thread.sleep(3000);
@@ -802,10 +856,10 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.GoButtonForRound();
 		Thread.sleep(5000);
-		lop.CreateMatchSelectDropDownClick();
-		Thread.sleep(3000);
-		lop.CreateMatchSelectPoolAClick();
-		Thread.sleep(3000);
+		//lop.CreateMatchSelectDropDownClick();
+		//Thread.sleep(3000);
+		//lop.CreateMatchSelectPoolAClick();
+		//Thread.sleep(3000);
 	    lop.TeamOneCameraClick();
 	    Thread.sleep(3000);
 	    lop.SelectTeamForCreateMatchClick();
@@ -819,6 +873,88 @@ public class BaseClass {
 	    lop.CreateMatchButtonClick();
 	    Thread.sleep(8000);
 	   
+	}
+	@Test
+	public void EditMatch() throws InterruptedException 
+	{
+		lop.countryCodeDropdown();
+		Thread.sleep(2000);
+		lop.countryCodeSelection();
+		Thread.sleep(2000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(2000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		Thread.sleep(3000);
+		//put debug , enter OTP and go further
+		lop.MenuPathclick();
+		Thread.sleep(2000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(6000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
+		Thread.sleep(4000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(4000);
+		lop.addIconForAddMatchClick();
+		Thread.sleep(3000);
+		lop.SelectRound();
+		Thread.sleep(3000);
+		lop.GoButtonForRound();
+		Thread.sleep(5000);
+		//lop.CreateMatchSelectDropDownClick();
+		//Thread.sleep(3000);
+		//lop.CreateMatchSelectPoolAClick();
+		//Thread.sleep(3000);
+	    lop.TeamOneCameraClick();
+	    Thread.sleep(3000);
+	    lop.SelectTeamForCreateMatchClick();
+	    Thread.sleep(3000);
+	    lop.TeamTwoCameraClick();
+	    Thread.sleep(3000);
+	    lop.SelectTeamForCreateMatchClick();
+	    Thread.sleep(3000);
+	    lop.scrollPage();
+	    Thread.sleep(4000);
+	    lop.CreateMatchButtonClick();
+	    Thread.sleep(8000);
+	   
+	}
+	@Test
+	public void CreateGroup() throws InterruptedException 
+	{	
+		
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(2000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(4000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TournamentAboutTab();
+		Thread.sleep(3000); 
+		lop.TournamentPointsTab();
+		Thread.sleep(3000);
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
 	}
 	  @AfterTest 
 	  public void teardown() {
