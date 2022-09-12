@@ -525,9 +525,10 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
@@ -549,7 +550,7 @@ public class BaseClass {
 		Thread.sleep(4000);
 		lop.EnterTeamName("abc123#");
 		Thread.sleep(4000);
-		lop.AddTeamButtonClick2();
+		lop.AddTeamButtonClick();
 		Thread.sleep(4000);
 	}
 
