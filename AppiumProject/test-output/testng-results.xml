@@ -2,20 +2,20 @@
 <testng-results ignored="23" total="24" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-13T00:01:53 IST" name="Default suite" finished-at="2022-09-13T00:04:29 IST" duration-ms="156432">
+  <suite started-at="2022-09-13T09:51:10 IST" name="Default suite" finished-at="2022-09-13T09:52:51 IST" duration-ms="100231">
     <groups>
     </groups>
-    <test started-at="2022-09-13T00:01:53 IST" name="Default test" finished-at="2022-09-13T00:04:29 IST" duration-ms="156432">
+    <test started-at="2022-09-13T09:51:10 IST" name="Default test" finished-at="2022-09-13T09:52:51 IST" duration-ms="100231">
       <class name="test.BaseClass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@201a4587]" started-at="2022-09-13T00:01:53 IST" name="setup" finished-at="2022-09-13T00:02:13 IST" duration-ms="20214" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@201a4587]" started-at="2022-09-13T09:51:10 IST" name="setup" finished-at="2022-09-13T09:51:34 IST" duration-ms="23858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CreateTeamPaeValidation()[pri:0, instance:test.BaseClass@201a4587]" started-at="2022-09-13T00:02:13 IST" name="CreateTeamPaeValidation" finished-at="2022-09-13T00:04:28 IST" duration-ms="135320" status="PASS">
+        <test-method signature="AddPlayersInTeamFieldValidations()[pri:0, instance:test.BaseClass@201a4587]" started-at="2022-09-13T09:51:34 IST" name="AddPlayersInTeamFieldValidations" finished-at="2022-09-13T09:52:50 IST" duration-ms="75425" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateTeamPaeValidation -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@201a4587]" started-at="2022-09-13T00:04:28 IST" name="teardown" finished-at="2022-09-13T00:04:29 IST" duration-ms="828" status="PASS">
+        </test-method> <!-- AddPlayersInTeamFieldValidations -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@201a4587]" started-at="2022-09-13T09:52:50 IST" name="teardown" finished-at="2022-09-13T09:52:51 IST" duration-ms="859" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

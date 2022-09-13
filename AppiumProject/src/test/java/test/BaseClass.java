@@ -512,6 +512,7 @@ public class BaseClass {
 	@Test
 	public void CreateTeamPaeValidation() throws InterruptedException 
 	{
+		Thread.sleep(4000);
 		lop.countryCodeDropdown();
 		Thread.sleep(2000);
 		lop.countryCodeSelection();
@@ -595,6 +596,7 @@ public class BaseClass {
 	@Test
 	public void EditTeamValidations() throws InterruptedException 
 	{
+		Thread.sleep(4000);
 		lop.countryCodeDropdown();
 		Thread.sleep(2000);
 		lop.countryCodeSelection();
@@ -608,9 +610,10 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
@@ -630,7 +633,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.EditTeamPageValidations();
 		Thread.sleep(3000);
-		lop.EditTeamName("Rin");
+		lop.EditTeamName("VRin");
 		Thread.sleep(3000);
 		lop.EditSaveTeamButtonClick();
 		Thread.sleep(3000);
@@ -710,9 +713,10 @@ public class BaseClass {
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
@@ -727,15 +731,15 @@ public class BaseClass {
 		// Make debug point here and click on add player icon manually 
 		lop.addplayerIconOnEditPageClick();
 		Thread.sleep(4000);
-		lop.PlayerMobileNumber("1234567890123");
-		Thread.sleep(2000);
+		//lop.PlayerMobileNumber("1234567890123");
+		//Thread.sleep(2000);
 		lop.AddPLayerButtonClick();
 		Thread.sleep(5000);
 		Thread.sleep(4000);
 		lop.AddPagePlayerFirstNamealidation();
 		Thread.sleep(3000);
-		lop.AddPagePlayerMobileNumberLengthValidation();
-		Thread.sleep(5000);
+		//lop.AddPagePlayerMobileNumberLengthValidation();
+		//Thread.sleep(5000);
 		
 	}
 	
@@ -793,14 +797,14 @@ public class BaseClass {
 		lop.getOTPButton();
 		Thread.sleep(4000);
 		lop.otp("1","2","3","4");
-		Thread.sleep(3000);
 		lop.MenuPathclick();
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
 		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
-		lop.SelectOurTornamentClick();
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
 		Thread.sleep(4000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
@@ -812,18 +816,18 @@ public class BaseClass {
 		Thread.sleep(4000);
 		lop.ClickOnEditPlayer();
 		Thread.sleep(4000);
-		lop.EditPagePlayerMobileNumber("1234567890123");
-		Thread.sleep(2000);
+		//lop.EditPagePlayerMobileNumber("1234567890123");
+		//Thread.sleep(2000);
 		lop.EditPagePlayerFirstName("");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.EditPagePlayerLastName("");
 		Thread.sleep(3000);
 		lop.UpdatePLayerButtonClick();
 		Thread.sleep(4000);
 		lop.EditPagePlayerFirstNamealidation();
 		Thread.sleep(3000);
-		lop.EditPagePlayerMobileNumberLengthValidation();
-		Thread.sleep(5000);
+		//lop.EditPagePlayerMobileNumberLengthValidation();
+		//Thread.sleep(5000);
 	}
 	//============================Create Match/Round Section=====================//
 	@Test
