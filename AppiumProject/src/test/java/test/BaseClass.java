@@ -53,7 +53,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yoCricket (6).apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v11.08.02.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -192,8 +192,8 @@ public class BaseClass {
 		lop.otp("1","2","3","4");
 	    Thread.sleep(3000);
 		
-		//lop.firstNameTextbox();
-		//lop.LastNameTextbox();
+		lop.firstNameTextbox();
+		lop.LastNameTextbox();
 		lop.updateButtonclick();
 	}
 		
@@ -224,7 +224,7 @@ public class BaseClass {
 		lop.MenuPathclick();
 		Thread.sleep(3000); 
 		lop.CreateTournamentLinkclick();
-		Thread.sleep(3000); 
+		Thread.sleep(5000); 
 		lop.UploadProfilePhoto();
 		Thread.sleep(4000); 
 		lop.ClickToUploadMainPhoto();
@@ -928,6 +928,8 @@ public class BaseClass {
 	    Thread.sleep(8000);
 	   
 	}
+	
+	//===============================Group=====================================//
 	@Test
 	public void CreateGroup() throws InterruptedException 
 	{	
@@ -949,7 +951,7 @@ public class BaseClass {
 		//Thread.sleep(6000);
 		lop.selectOurTournamentWithoutScrollInPast();
 		//lop.SelectOurTornamentClick();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TournamentAboutTab();
@@ -960,6 +962,309 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.AddGroupIcon();
 		Thread.sleep(3000);
+		lop.AddGroupName("TestGroup");
+		Thread.sleep(3000);
+		lop.AddGroupButton();
+		Thread.sleep(3000);
+		lop.VerifyAddGroupSuccessmessage();
+		Thread.sleep(3000);
+		lop.AddGroupSuccessmessagePopUpOKButton();
+		Thread.sleep(7000);
+		lop.EditGroupIconClick();
+		Thread.sleep(4000);
+		lop.VerifyAddedGroupName();
+		Thread.sleep(3000);
+		
+	}
+	
+	@Test
+	public void DeleteGroup() throws InterruptedException 
+	{	
+		
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		Thread.sleep(4000);
+		lop.MenuPathclick();
+		Thread.sleep(4000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(15000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TournamentAboutTab();
+		Thread.sleep(3000); 
+		lop.TournamentPointsTab();
+		Thread.sleep(3000);
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
+		lop.AddGroupName("DeleteGroup");
+		Thread.sleep(3000);
+		lop.AddGroupButton();
+		Thread.sleep(3000);
+		lop.VerifyAddGroupSuccessmessage();
+		Thread.sleep(3000);
+		lop.AddGroupSuccessmessagePopUpOKButton();
+		Thread.sleep(3000);
+		lop.DeleteIconGroupClick();
+		Thread.sleep(3000);
+		lop.VerifyDeleteGroupSuccessmessage();
+		Thread.sleep(3000);
+		lop.AddGroupDeleteMessagePopUpOKButton();
+		Thread.sleep(3000);
+		
+		
+	}
+	@Test
+	public void EditGroup() throws InterruptedException 
+	{			
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(5000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(15000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TournamentAboutTab();
+		Thread.sleep(3000); 
+		lop.TournamentPointsTab();
+		Thread.sleep(3000);
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
+		lop.AddGroupName("EditGroupTest");
+		Thread.sleep(3000);
+		lop.AddGroupButton();
+		Thread.sleep(3000);
+		lop.VerifyAddGroupSuccessmessage();
+		Thread.sleep(3000);
+		lop.AddGroupSuccessmessagePopUpOKButton();
+		Thread.sleep(7000);
+		lop.EditGroupIconClick();
+		Thread.sleep(4000);
+		lop.SelectFirstTeamInGroup();
+		Thread.sleep(4000);
+		lop.EditGroupIconInsideSaveButtonClick();
+		Thread.sleep(4000);
+		lop.VerifyMessageAddedTeamInGroup();
+		Thread.sleep(4000);
+		lop.VerifyMessageAddedTeamInGroupPopUpOKBUtton();
+		Thread.sleep(4000);
+		/*lop.VerifyAddedGroupName();
+		Thread.sleep(3000);	
+		lop.EditGroupIconInsideClick();
+		Thread.sleep(3000);	
+		lop.EditGroupNameInsideEditPage("EditGroupTest");
+		Thread.sleep(3000);	
+		lop.EditGroupIconInsideSaveButtonClick();
+		Thread.sleep(3000);	*/
+		//lop.CancelGroupIconInsideClick();
+		//Thread.sleep(3000);			
+	}
+	@Test
+	public void EditGroupSearchTeam() throws InterruptedException 
+	{			
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(5000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(15000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TournamentAboutTab();
+		Thread.sleep(3000); 
+		lop.TournamentPointsTab();
+		Thread.sleep(3000);
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
+		lop.AddGroupName("EditGroupTest");
+		Thread.sleep(3000);
+		lop.AddGroupButton();
+		Thread.sleep(3000);
+		lop.VerifyAddGroupSuccessmessage();
+		Thread.sleep(3000);
+		lop.AddGroupSuccessmessagePopUpOKButton();
+		Thread.sleep(7000);
+		lop.EditGroupIconClick();
+		Thread.sleep(4000);
+		lop.SelectFirstTeamInGroup();
+		Thread.sleep(4000);
+		lop.EditGroupIconInsideSaveButtonClick();
+		Thread.sleep(4000);
+		lop.VerifyMessageAddedTeamInGroup();
+		Thread.sleep(4000);
+		lop.VerifyMessageAddedTeamInGroupPopUpOKBUtton();
+		Thread.sleep(4000);
+		/*lop.VerifyAddedGroupName();
+		Thread.sleep(3000);	
+		lop.EditGroupIconInsideClick();
+		Thread.sleep(3000);	
+		lop.EditGroupNameInsideEditPage("EditGroupTest");
+		Thread.sleep(3000);	
+		lop.EditGroupIconInsideSaveButtonClick();
+		Thread.sleep(3000);	*/
+		//lop.CancelGroupIconInsideClick();
+		//Thread.sleep(3000);			
+	}
+	
+	@Test
+	public void MandatoryGroupNameVerification() throws InterruptedException 
+	{			
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(2000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(7000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TournamentAboutTab();
+		Thread.sleep(3000); 
+		lop.TournamentPointsTab();
+		Thread.sleep(3000);
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
+		//lop.AddGroupName(" ");
+		//Thread.sleep(3000);
+		lop.AddGroupButton();
+		Thread.sleep(3000);
+		//lop.VerifyAddGroupSuccessmessage();
+		//Thread.sleep(3000);
+		lop.VerifyAddGroupMandatorymessage();
+		Thread.sleep(3000);
+	}
+	
+	@Test
+	public void LengthGroupNameVerification() throws InterruptedException 
+	{			
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(2000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(7000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TournamentAboutTab();
+		Thread.sleep(3000); 
+		lop.TournamentPointsTab();
+		Thread.sleep(3000);
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
+		lop.AddGroupName("");
+		Thread.sleep(3000);
+		lop.AddGroupButton();
+		Thread.sleep(3000);
+		lop.VerifyAddGroupLengthMessage();
+		Thread.sleep(3000);	
+		lop.GroupNameLengthMessagePopUpOKButton();
+		Thread.sleep(3000);	
+	}
+	//===============================Gallery=======================================//
+	@Test
+	public void Gallery() throws InterruptedException 
+	{			
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(4000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(4000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.SelectOurTornamentClick();
+		Thread.sleep(15000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.ClickOnGallery();
+		Thread.sleep(5000);
+		lop.UploadPhotoButtonClick();
+		Thread.sleep(4000);
+		lop.UploadPhotoCameraButtonClick();
+		Thread.sleep(4000);
+		lop.UploadPhotoInGallery();
+		Thread.sleep(4000);
+		lop.DeletePhotoClickinGallery();
+		Thread.sleep(4000);
+		lop.VerifyEmptyGalleryMessage();
+		Thread.sleep(4000);		
 	}
 	  @AfterTest 
 	  public void teardown() {
