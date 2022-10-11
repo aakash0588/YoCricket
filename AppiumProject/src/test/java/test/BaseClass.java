@@ -1266,6 +1266,24 @@ public class BaseClass {
 		lop.VerifyEmptyGalleryMessage();
 		Thread.sleep(4000);		
 	}
+	//=======================Toss===========================================//
+	@Test
+	public void Toss() throws InterruptedException 
+	{			
+		lop.countryCodeDropdown();
+		Thread.sleep(3000);
+		lop.countryCodeSelection();
+		Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(3000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		Thread.sleep(4000); 
+		lop.TossClick();
+		Thread.sleep(4000); 
+	}
 	  @AfterTest 
 	  public void teardown() {
 		  
