@@ -101,10 +101,9 @@ public class BaseClass {
 		  Thread.sleep(2000);
 		  driver.findElement(By.xpath(getOtpButton2)).click();
 		  Thread.sleep(3000);		  
-		  String msg2 =driver.findElement(By.xpath(mobileNumberMaxDigitMessage)).getText();
+		  driver.findElement(By.xpath(mobileNumberMaxDigitMessage)).isDisplayed();
 		  Thread.sleep(2000);
-		  assertEquals(msg2,"Mobile number should be of 10 digits", "Validation Message not match with expected");
-		  driver.findElement(By.className("android.widget.EditText")).sendKeys( "+916442045");
+		   driver.findElement(By.className("android.widget.EditText")).sendKeys( "+916442045");
 		  Thread.sleep(2000);
 		  driver.findElement(By.xpath(getOtpButton2)).click();
 		  Thread.sleep(3000);		  
@@ -277,7 +276,7 @@ public class BaseClass {
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TournamentAboutTab();
@@ -302,7 +301,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.EdittournamentStartDateIcon().click();
 		Thread.sleep(2000);
-		lop.createtournamentSelectStartDate("11 September 2022");
+		lop.createtournamentSelectStartDate("17 October 2022");
 		Thread.sleep(2000);
 		lop.createtournamentSelecrStartDateOKButton().click(); 
 		Thread.sleep(2000);
