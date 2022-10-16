@@ -53,7 +53,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v11.08.02.apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v15.10.01.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -193,8 +193,11 @@ public class BaseClass {
 	    Thread.sleep(3000);
 		
 		lop.firstNameTextbox();
+		Thread.sleep(3000);
 		lop.LastNameTextbox();
+		Thread.sleep(3000);
 		lop.updateButtonclick();
+		Thread.sleep(3000);
 	}
 		
 	//===================================Tournament Section==========================================//
@@ -243,7 +246,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.createtournamentStartDateIcon().click();
 		Thread.sleep(3000);
-		lop.createtournamentSelectStartDate("11 September 2022");
+		lop.createtournamentSelectStartDate("16 October 2022");
 		Thread.sleep(3000);
 		lop.createtournamentSelecrStartDateOKButton().click(); 
 		Thread.sleep(3000);
@@ -486,11 +489,11 @@ public class BaseClass {
 		lop.MenuPathclick();
 		Thread.sleep(2000); 
 		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
+		Thread.sleep(5000); 
 		//lop.scrollPage();
 		//Thread.sleep(6000);
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
@@ -501,7 +504,7 @@ public class BaseClass {
 		Thread.sleep(4000);
 		lop.EnterTeamName("Ring");
 		Thread.sleep(3000);
-		lop.EnterTeamCity("Vado");
+		lop.EnterTeamCity("Vad");
 		Thread.sleep(3000);
 		lop.ClickToUploadTeamPhoto();
 		Thread.sleep(3000);
@@ -574,7 +577,7 @@ public class BaseClass {
 		//lop.scrollPage();
 		//Thread.sleep(6000);
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
@@ -583,12 +586,12 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.OKButtonAddNewPlayerScreen();
 		Thread.sleep(3000);
-		lop.EditTeamName("Rin");
+		lop.EditTeamName("Ring");
 		Thread.sleep(3000);
 		lop.EditTeamCity("raj");
 		Thread.sleep(3000);
 		lop.EditClickToUploadTeamPhoto();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		lop.EditSaveTeamButtonClick();
 		Thread.sleep(4000);
 	}
@@ -662,7 +665,7 @@ public class BaseClass {
 		Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.TeamMenuClick();
@@ -764,7 +767,7 @@ public class BaseClass {
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.TeamMenuClick();
@@ -777,12 +780,13 @@ public class BaseClass {
 		Thread.sleep(4000);
 		//lop.EditPagePlayerMobileNumber("7788552233");
 		//Thread.sleep(2000);
-		lop.EditPagePlayerFirstName("VVvv");
+		lop.EditPagePlayerFirstName("rinkal");
 		Thread.sleep(2000);
-		lop.EditPagePlayerLastName("Laxxx");
+		lop.EditPagePlayerLastName("pr");
 		Thread.sleep(2000);
 		lop.UpdatePLayerButtonClick();
 		Thread.sleep(5000);
+		lop.TeamOneClick();
 		
 	}
 	@Test
@@ -852,7 +856,7 @@ public class BaseClass {
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.addIconForAddMatchClick();
@@ -861,10 +865,10 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.GoButtonForRound();
 		Thread.sleep(5000);
-		//lop.CreateMatchSelectDropDownClick();
-		//Thread.sleep(3000);
-		//lop.CreateMatchSelectPoolAClick();
-		//Thread.sleep(3000);
+		lop.CreateMatchSelectDropDownClick();
+		Thread.sleep(3000);
+		lop.CreateMatchSelectPoolAClick();
+		Thread.sleep(3000);
 	    lop.TeamOneCameraClick();
 	    Thread.sleep(3000);
 	    lop.SelectTeamForCreateMatchClick();
@@ -901,7 +905,7 @@ public class BaseClass {
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(4000);
 		lop.addIconForAddMatchClick();
@@ -951,7 +955,7 @@ public class BaseClass {
 		//Thread.sleep(6000);
 		lop.selectOurTournamentWithoutScrollInPast();
 		//lop.SelectOurTornamentClick();
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TournamentAboutTab();
