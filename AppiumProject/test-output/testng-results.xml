@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="30" total="31" passed="1" failed="0" skipped="0">
+<testng-results ignored="31" total="32" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-16T21:32:15 IST" name="Default suite" finished-at="2022-10-16T21:34:21 IST" duration-ms="126574">
+  <suite started-at="2022-10-22T12:33:52 IST" name="Default suite" finished-at="2022-10-22T12:35:47 IST" duration-ms="115050">
     <groups>
     </groups>
-    <test started-at="2022-10-16T21:32:15 IST" name="Default test" finished-at="2022-10-16T21:34:21 IST" duration-ms="126574">
+    <test started-at="2022-10-22T12:33:52 IST" name="Default test" finished-at="2022-10-22T12:35:47 IST" duration-ms="115050">
       <class name="test.BaseClass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@27f981c6]" started-at="2022-10-16T21:32:15 IST" name="setup" finished-at="2022-10-16T21:32:32 IST" duration-ms="17527" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@1b11171f]" started-at="2022-10-22T12:33:52 IST" name="setup" finished-at="2022-10-22T12:34:10 IST" duration-ms="17941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Gallery()[pri:0, instance:test.BaseClass@27f981c6]" started-at="2022-10-16T21:32:32 IST" name="Gallery" finished-at="2022-10-16T21:34:20 IST" duration-ms="108298" status="PASS">
+        <test-method signature="StartSchedualMatch()[pri:0, instance:test.BaseClass@1b11171f]" started-at="2022-10-22T12:34:10 IST" name="StartSchedualMatch" finished-at="2022-10-22T12:35:46 IST" duration-ms="96358" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Gallery -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@27f981c6]" started-at="2022-10-16T21:34:20 IST" name="teardown" finished-at="2022-10-16T21:34:21 IST" duration-ms="689" status="PASS">
+        </test-method> <!-- StartSchedualMatch -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@1b11171f]" started-at="2022-10-22T12:35:46 IST" name="teardown" finished-at="2022-10-22T12:35:47 IST" duration-ms="691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

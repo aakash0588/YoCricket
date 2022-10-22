@@ -53,7 +53,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v15.10.01.apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v19.10.01.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -1287,7 +1287,62 @@ public class BaseClass {
 		lop.TossClick();
 		Thread.sleep(4000); 
 	}
-	  @AfterTest 
+	  
+	//=======================Play Match===========================================//
+	@Test
+	public void StartSchedualMatch() throws InterruptedException 
+	{
+		lop.countryCodeDropdown();
+		Thread.sleep(2000);
+		lop.countryCodeSelection();
+		Thread.sleep(2000);
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(2000);
+		lop.getOTPButton();
+		Thread.sleep(4000);
+		lop.otp("1","2","3","4");
+		Thread.sleep(3000);
+		//put debug , enter OTP and go further
+		lop.MenuPathclick();
+		Thread.sleep(2000); 
+		lop.MyTournamentLinkClick();
+		Thread.sleep(6000); 
+		//lop.scrollPage();
+		//Thread.sleep(6000);
+		//lop.SelectOurTornamentClick();
+		lop.selectOurTournamentWithoutScrollInPast();
+		Thread.sleep(15000);
+		lop.PlayIconClick();
+		Thread.sleep(4000);
+		lop.FirstTeamClick();
+		Thread.sleep(2000);
+		lop.SelectBatClick();
+		Thread.sleep(2000);
+		lop.GoClick();
+		Thread.sleep(4000);
+		lop.MaxOver();
+		Thread.sleep(2000);
+		lop.PowerPlay();
+		Thread.sleep(2000);
+		lop.MaxPlayer();
+		Thread.sleep(2000);
+		lop.FirstTeamSquadClick();
+		Thread.sleep(2000);
+		lop.SelectFirstPlayerFromFirstSquad();
+		Thread.sleep(2000);
+		lop.SelectSecondPlayerFromFirstSquad();
+		Thread.sleep(2000);
+		lop.SelectFirstPlayerAsCaptianFromFirstSquad();
+		Thread.sleep(2000);
+		lop.SelectSecondPlayerAsVCFromFirstSquad();
+		Thread.sleep(2000);
+		lop.Back();
+		Thread.sleep(5000);
+		//lop.GoButtonOnSelectSquad();
+	}
+	
+	//=============================================================================//
+	@AfterTest 
 	  public void teardown() {
 		  
 		  driver.quit();
