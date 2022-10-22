@@ -1337,8 +1337,21 @@ public class BaseClass {
 		lop.SelectSecondPlayerAsVCFromFirstSquad();
 		Thread.sleep(2000);
 		lop.Back();
-		Thread.sleep(5000);
-		//lop.GoButtonOnSelectSquad();
+		Thread.sleep(3000);
+		lop.SecondTeamSquadClick();
+		Thread.sleep(3000);
+		lop.SelectFirstPlayerFromSecondSquad();
+		Thread.sleep(3000);
+		lop.SelectSecondPlayerFromSecondSquad();
+		Thread.sleep(3000);
+		lop.SelectFirstPlayerAsCaptianFromSecondSquad();
+		Thread.sleep(3000);
+		lop.SelectSecondPlayerAsVCFromSecondSquad();
+		Thread.sleep(3000);
+		lop.Back();
+		Thread.sleep(3000);
+		lop.GoButtonOnSelectSquad();
+		Thread.sleep(3000);
 	}
 	
 	//=============================================================================//
