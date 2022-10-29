@@ -1359,22 +1359,33 @@ public class BaseClass {
 	@Test
 	public void Profile() throws InterruptedException 
 	{
+		LoginToMenu();
+		lop.ProfileIconClick();
+		lop.EditProfileIconClick();		
+		String firstName=lop.EditProfileFirstName();
+		String lastName=lop.EditProfileLastName();		
+		lop.scrollPage();		
+		lop.scrollPage();	
+		lop.ProfileEmailId();
+		lop.ProfileUpdateButton();
+		lop.ProfileUpdateSuccessMsg();
+		lop.ProfileUpdateSuccessMsgOKButton();	
+		lop.EditProfileIconClick();
+		lop.VerifyEditProfileLastName(lastName);
+		lop.VerifyEditProfileFirstName(firstName);
+		
+	}
+	//=============================================================================//
+	public void LoginToMenu() throws InterruptedException 
+	{
 		lop.countryCodeDropdown();
 		lop.countryCodeSelection();
 		lop.privacyPolicyCheckbox();
 		lop.getOTPButton();
 		lop.otp("1","2","3","4");
 		lop.MenuPathclick();
-		lop.ProfileIconClick();
-		lop.EditProfileIconClick();		
-		lop.EditFirstName();
-		lop.EditLastName();		
-		lop.scrollPage();		
-		lop.scrollPage();		
-		lop.ProfileUpdateButton();
-		Thread.sleep(5000);
 	}
-	//=============================================================================//
+	
 	@AfterTest 
 	  public void teardown() {
 		  

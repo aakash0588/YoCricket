@@ -5,6 +5,7 @@ import java.io.File;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -1153,17 +1154,34 @@ public class LoginOtpPageElement {
     	ExplicitWait(editProfile);
     	driver.findElement(By.xpath(editProfile)).click();
     }
-    public void EditFirstName()
+    public String EditProfileFirstName()
     {
     	String EditFirstName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.widget.EditText";
     	ExplicitWait(EditFirstName);
-    	driver.findElement(By.xpath(EditFirstName)).sendKeys(RandomString.make(10));
+    	String ranFirstName = RandomString.make(10);
+    	driver.findElement(By.xpath(EditFirstName)).sendKeys(ranFirstName);
+    	return ranFirstName;
     }
-    public void EditLastName()
+    public void VerifyEditProfileFirstName(String verify)
+    {
+    	String EditFirstName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.widget.EditText";
+    	ExplicitWait(EditFirstName);
+    	assertMessage(By.xpath(EditFirstName), verify, "First Name Not Matched After Update");
+    }
+    public String EditProfileLastName()
     {
     	String EditLAstName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.widget.EditText";
     	ExplicitWait(EditLAstName);
-    	driver.findElement(By.xpath(EditLAstName)).sendKeys(RandomString.make(10));
+    	String ran = RandomString.make(10);
+    	driver.findElement(By.xpath(EditLAstName)).sendKeys(ran);
+    	return ran;
+    }
+    public void VerifyEditProfileLastName(String verify)
+    {
+    	String EditLAstName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.widget.EditText";
+    	ExplicitWait(EditLAstName);
+    	assertMessage(By.xpath(EditLAstName), verify, "Last Name Not Matched After Update");
+    	
     }
     public void ProfileUpdateButton()
     {
@@ -1171,6 +1189,25 @@ public class LoginOtpPageElement {
     	ExplicitWait(profilrUpdate);
     	driver.findElement(By.xpath(profilrUpdate)).click();
     }
+    public void ProfileUpdateSuccessMsg()
+    {
+    	By profilrUpdateMsg=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView");
+    	ExplicitWait(profilrUpdateMsg);
+    	assertMessage(profilrUpdateMsg, "Profile detail has been updated successfully", "Message is not proper");
+    }
+    public void ProfileUpdateSuccessMsgOKButton()
+    {
+    	String profilrUpdateOKButton="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView";
+    	ExplicitWait(profilrUpdateOKButton);
+    	driver.findElement(By.xpath(profilrUpdateOKButton)).click();
+    }
+    public void ProfileEmailId()
+    {
+    	String ProfileEmailIdPath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.EditText";
+    	ExplicitWait(ProfileEmailIdPath);
+    	driver.findElement(By.xpath(ProfileEmailIdPath)).sendKeys("aakash.pra@gmail.com");
+    }
+    
     //==============================ExplicitWaitMethod=====================================//
     public void ExplicitWait(String xpath)
     {
@@ -1181,6 +1218,12 @@ public class LoginOtpPageElement {
     {
     	WebDriverWait wait = new WebDriverWait(driver, 20);
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+    }
+    public void assertMessage(By path,String expectedMsg, String msg)
+    {
+    	String actualMsg = driver.findElement(path).getText();
+    	assertEquals(actualMsg,expectedMsg, msg);
+    	System.out.println(actualMsg);
     }
 }
 
