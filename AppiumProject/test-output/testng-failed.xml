@@ -6,7 +6,7 @@
       <class name="test.BaseClass">
         <methods>
           <include name="setup"/>
-          <include name="StartSchedualMatch"/>
+          <include name="Profile"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- test.BaseClass -->
