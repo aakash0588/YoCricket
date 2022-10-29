@@ -12,7 +12,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.CapabilityType;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -23,11 +24,13 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import net.bytebuddy.utility.RandomString;
 
 public class LoginOtpPageElement {
 	
 	AppiumDriver<MobileElement> driver; 
 	Dimension size;
+	
 	
 	By submitOtp = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup");
 	By countryCodeDropdownpath = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup");
@@ -110,36 +113,43 @@ public class LoginOtpPageElement {
 	
 	 public void otp(String dg1, String dg2, String dg3, String dg4) throws InterruptedException
 	    {
-		 	driver.findElement(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-0\"]")).sendKeys(dg1);
-		 	Thread.sleep(1000); 
+		 	ExplicitWait(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-0\"]"));
+		    driver.findElement(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-0\"]")).sendKeys(dg1);
+		    ExplicitWait(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-1\"]"));
 			driver.findElement(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-1\"]")).sendKeys(dg2);
-			Thread.sleep(1000); 
+			ExplicitWait(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-2\"]"));
 			driver.findElement(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-2\"]")).sendKeys(dg3);
-			Thread.sleep(1000); 
+			ExplicitWait(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-3\"]"));
 			driver.findElement(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-3\"]")).sendKeys(dg4);
-			Thread.sleep(1000); 
+			ExplicitWait(submitOtp);
 			driver.findElement(submitOtp).click();
-			Thread.sleep(7000);
+			
 	    }
     public void countryCodeDropdown()
     {
-                 driver.findElement(countryCodeDropdownpath).click();
+        ExplicitWait(countryCodeDropdownpath);         
+    	driver.findElement(countryCodeDropdownpath).click();
      }
     public void countryCodeSelection() throws InterruptedException
     {
+    	ExplicitWait(By.className("android.widget.EditText"));
+    	Thread.sleep(2000);
     	driver.findElement(By.className("android.widget.EditText")).sendKeys("91");
-		Thread.sleep(2000); 
+    	ExplicitWait(By.className("android.widget.TextView"));
+    	Thread.sleep(2000);
 		driver.findElement(By.className("android.widget.TextView")).click();
-		Thread.sleep(3000);
+		ExplicitWait(By.className("android.widget.EditText"));
 		driver.findElement(By.className("android.widget.EditText")).sendKeys("9825964420");
-		Thread.sleep(2000);
+		
     }
     public void privacyPolicyCheckbox()
     {
+    	ExplicitWait(privacyPolicyCheckBox);
     	driver.findElement(privacyPolicyCheckBox).click();
     }
     public void getOTPButton()
     {
+    	ExplicitWait(getOtpButton);
     	driver.findElement(getOtpButton).click();
     }
     public void continueAsGuestpathlinkPresent()
@@ -179,6 +189,7 @@ public class LoginOtpPageElement {
     
     public void MenuPathclick()
     {
+    			ExplicitWait(menuPath);	
                  driver.findElement(menuPath).click();
      }
     
@@ -336,7 +347,7 @@ public class LoginOtpPageElement {
     	  System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx);
     	  
     	  TouchAction touch = new TouchAction(driver);
-        touch.press(PointOption.point(startx,starty)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(endx,endy)).release().perform();
+        touch.press(PointOption.point(startx,starty)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3))).moveTo(PointOption.point(endx,endy)).release().perform();
     }
     public void scrollPageUp()
     {
@@ -1128,6 +1139,48 @@ public class LoginOtpPageElement {
     public void SelectSecondPlayerAsVCFromSecondSquad()
     {
     	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView")).click();
+    }
+    //==explicit============================================Profile=============================================//
+    public void ProfileIconClick()
+    {
+    	String profileIcon="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup";
+    	ExplicitWait(profileIcon);
+    	driver.findElement(By.xpath(profileIcon)).click();
+    }
+    public void EditProfileIconClick()
+    {
+    	String editProfile ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup";
+    	ExplicitWait(editProfile);
+    	driver.findElement(By.xpath(editProfile)).click();
+    }
+    public void EditFirstName()
+    {
+    	String EditFirstName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.widget.EditText";
+    	ExplicitWait(EditFirstName);
+    	driver.findElement(By.xpath(EditFirstName)).sendKeys(RandomString.make(10));
+    }
+    public void EditLastName()
+    {
+    	String EditLAstName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.widget.EditText";
+    	ExplicitWait(EditLAstName);
+    	driver.findElement(By.xpath(EditLAstName)).sendKeys(RandomString.make(10));
+    }
+    public void ProfileUpdateButton()
+    {
+    	String profilrUpdate="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]/android.view.ViewGroup/android.widget.TextView";
+    	ExplicitWait(profilrUpdate);
+    	driver.findElement(By.xpath(profilrUpdate)).click();
+    }
+    //==============================ExplicitWaitMethod=====================================//
+    public void ExplicitWait(String xpath)
+    {
+    	WebDriverWait wait = new WebDriverWait(driver, 20);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+    }
+    public void ExplicitWait(By xpath)
+    {
+    	WebDriverWait wait = new WebDriverWait(driver, 20);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
     }
 }
 

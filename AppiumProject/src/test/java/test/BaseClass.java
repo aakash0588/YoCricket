@@ -1351,9 +1351,29 @@ public class BaseClass {
 		lop.Back();
 		Thread.sleep(3000);
 		lop.GoButtonOnSelectSquad();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 	}
 	
+	//======================================Profile=======================================//
+	
+	@Test
+	public void Profile() throws InterruptedException 
+	{
+		lop.countryCodeDropdown();
+		lop.countryCodeSelection();
+		lop.privacyPolicyCheckbox();
+		lop.getOTPButton();
+		lop.otp("1","2","3","4");
+		lop.MenuPathclick();
+		lop.ProfileIconClick();
+		lop.EditProfileIconClick();		
+		lop.EditFirstName();
+		lop.EditLastName();		
+		lop.scrollPage();		
+		lop.scrollPage();		
+		lop.ProfileUpdateButton();
+		Thread.sleep(5000);
+	}
 	//=============================================================================//
 	@AfterTest 
 	  public void teardown() {
