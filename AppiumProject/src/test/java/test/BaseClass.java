@@ -1361,18 +1361,36 @@ public class BaseClass {
 	{
 		LoginToMenu();
 		lop.ProfileIconClick();
-		lop.EditProfileIconClick();		
-		String firstName=lop.EditProfileFirstName();
-		String lastName=lop.EditProfileLastName();		
+		lop.EditProfileIconClick();	
 		lop.scrollPage();		
 		lop.scrollPage();	
+		lop.scrollPage();
+		lop.ProfileLocation();
 		lop.ProfileEmailId();
+		lop.ProfileGender();
+		lop.ProfileWeight();
+		lop.ProfileBatsman();
 		lop.ProfileUpdateButton();
 		lop.ProfileUpdateSuccessMsg();
 		lop.ProfileUpdateSuccessMsgOKButton();	
 		lop.EditProfileIconClick();
+		String firstName=lop.EditProfileFirstName();
+		String lastName=lop.EditProfileLastName();
+		lop.scrollPage();		
+		lop.scrollPage();	
+		lop.ProfileUpdateButton();
+		lop.ProfileUpdateSuccessMsg();
+		lop.ProfileUpdateSuccessMsgOKButton();
+		lop.VerifyProfileLocation("Surat, Gujarat, India");
+		lop.EditProfileIconClick();
 		lop.VerifyEditProfileLastName(lastName);
 		lop.VerifyEditProfileFirstName(firstName);
+		lop.scrollPage();	
+		lop.scrollPage();
+		lop.VerifyProfileEmailId("aakash.pra@gmail.com");
+		lop.VerifyProfileGender("Male");
+		//lop.VerifyProfileWeight("70");
+		lop.VerifyProfileBatsman("Batsman");
 		
 	}
 	//=============================================================================//
