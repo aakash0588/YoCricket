@@ -1390,8 +1390,40 @@ public class BaseClass {
 		lop.VerifyProfileEmailId("aakash.pra@gmail.com");
 		lop.VerifyProfileGender("Male");
 		//lop.VerifyProfileWeight("70");
-		lop.VerifyProfileBatsman("Batsman");
-		
+		lop.VerifyProfileBatsman("Batsman");		
+	}
+	
+	@Test
+	public void VerifyProfileFirstNameMandatory() throws InterruptedException 
+	{
+		LoginToMenu();
+		lop.ProfileIconClick();
+		lop.EditProfileIconClick();	
+		lop.EditProfileFirstNameMandatory();
+	}
+	@Test
+	public void VerifyProfileLastNameMandatory() throws InterruptedException 
+	{
+		LoginToMenu();
+		lop.ProfileIconClick();
+		lop.EditProfileIconClick();	
+		lop.EditProfileLastNameMandatory();
+	}
+	@Test
+	public void VerifyProfileEmailIdValidation() throws InterruptedException 
+	{
+		LoginToMenu();
+		lop.ProfileIconClick();
+		lop.EditProfileIconClick();	
+		lop.EditProfileEmailIDValidation();
+	}
+	@Test
+	public void VerifyProfileWeightValidation() throws InterruptedException 
+	{
+		LoginToMenu();
+		lop.ProfileIconClick();
+		lop.EditProfileIconClick();	
+		lop.EditProfileWeightValidation();
 	}
 	//=============================================================================//
 	public void LoginToMenu() throws InterruptedException 
