@@ -98,6 +98,7 @@ public class LoginOtpPageElement {
      }
 	public MobileElement createtournamentStartDateIcon() 
 	{ 
+		ExplicitWait("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView"); 
 		return driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView"));
 	}
 	public MobileElement EdittournamentStartDateIcon() 
@@ -112,6 +113,12 @@ public class LoginOtpPageElement {
 		return ser;
 	}
 	
+	public void SkipFirstPage() 
+	{ 
+		String skip = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
+		ExplicitWait(skip);
+		driver.findElement(By.xpath(skip)).click();
+	}
 	 public void otp(String dg1, String dg2, String dg3, String dg4) throws InterruptedException
 	    {
 		 	ExplicitWait(By.xpath("//android.widget.EditText[@content-desc=\"otpInput-0\"]"));
@@ -140,7 +147,7 @@ public class LoginOtpPageElement {
     	Thread.sleep(2000);
 		driver.findElement(By.className("android.widget.TextView")).click();
 		ExplicitWait(By.className("android.widget.EditText"));
-		driver.findElement(By.className("android.widget.EditText")).sendKeys("9825964420");
+		driver.findElement(By.className("android.widget.EditText")).sendKeys("9374746967");
 	}
     public void privacyPolicyCheckbox()
     {
@@ -195,11 +202,13 @@ public class LoginOtpPageElement {
     
     public void CreateTournamentLinkclick()
     {
-                 driver.findElement(createTornamentLink).click();
+    	ExplicitWait(createTornamentLink);	        
+    	driver.findElement(createTornamentLink).click();
      }
     public void TournamentNameTextbox(String nam)
     {
-                 driver.findElement(tournamentName).sendKeys(nam);
+    	ExplicitWait(tournamentName);         
+    	driver.findElement(tournamentName).sendKeys(nam);
      }
     public void EditTournamentNameTextbox(String nam)
     {
@@ -207,12 +216,12 @@ public class LoginOtpPageElement {
      }
     public void LocationNameTextbox() throws InterruptedException
     {
+    			ExplicitWait(Location); 
                  driver.findElement(Location).sendKeys("Vad");
-                 Thread.sleep(3000);
+                 ExplicitWait(Location); 
                  driver.findElement(Location).click();
-                 Thread.sleep(3000);
                  driver.hideKeyboard();
-                 Thread.sleep(3000);
+                 ExplicitWait(locationSelection); 
                  driver.findElement(locationSelection).click();
                 
      }
@@ -234,12 +243,12 @@ public class LoginOtpPageElement {
     }
     public void ArenaNameTextbox() throws InterruptedException
     {
+    	  ExplicitWait(arenaFacility);  
     	  driver.findElement(arenaFacility).sendKeys("Vad");
-          Thread.sleep(3000);
+    	  ExplicitWait(arenaFacility);  
           driver.findElement(arenaFacility).click();
-          Thread.sleep(3000);
           driver.hideKeyboard();
-          Thread.sleep(3000);
+          ExplicitWait("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView");  
           driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView")).click();
      }
     public void EditArenaNameTextbox() throws InterruptedException
@@ -261,7 +270,8 @@ public class LoginOtpPageElement {
     }
     public void OrganiserNameTextbox(String nam)
     {
-                 driver.findElement(organaiserName).sendKeys(nam);
+        ExplicitWait(organaiserName);        
+    	driver.findElement(organaiserName).sendKeys(nam);
      }
     public void EditOrganiserNameTextbox(String nam)
     {
@@ -269,7 +279,8 @@ public class LoginOtpPageElement {
      }
     public void OrganiserContactTextbox(String num)
     {
-                 driver.findElement(organaiserContact).sendKeys(num);
+    	ExplicitWait(organaiserContact);            
+    	driver.findElement(organaiserContact).sendKeys(num);
      }
     public void EditOrganiserContactTextbox(String num)
     {
@@ -277,7 +288,8 @@ public class LoginOtpPageElement {
      }
     public void CreateTournamentButtonclick()
     {
-                 driver.findElement(createTournamentButton).click();
+        ExplicitWait(createTournamentButton);         
+    	driver.findElement(createTournamentButton).click();
                  
     }
     public void EditTournamentButtonclick()
@@ -287,7 +299,8 @@ public class LoginOtpPageElement {
     }
     public void TournamentCategoryclick()
     {
-                 driver.findElement(tournamentCategory).click();
+        ExplicitWait(tournamentCategory);        
+    	driver.findElement(tournamentCategory).click();
                  
     }
     public void EditTournamentCategoryclick()
@@ -313,21 +326,25 @@ public class LoginOtpPageElement {
     }
     public void MyTournamentLinkClick()
     {
-                 driver.findElement(myTournamentsLink).click();
+        ExplicitWait(myTournamentsLink);         
+    	driver.findElement(myTournamentsLink).click();
                  
     }
     public void SelectOurTornamentClick()
     {
-                 driver.findElement(selectOurTournament).click();
+    	ExplicitWait(selectOurTournament);         
+    	driver.findElement(selectOurTournament).click();
                  
     }
     public void selectOurTournamentWithoutScrollInPast()
     {
+    	ExplicitWait("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View");
     	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View")).click();
     }
     public void OKButtonOFAddNewTeamsClick()
     {
-                 driver.findElement(OKButtonOFAddNewMatch).click();
+    	ExplicitWait(OKButtonOFAddNewMatch);         
+    	driver.findElement(OKButtonOFAddNewMatch).click();
                  
     }
     public void scrollPage()
@@ -371,12 +388,13 @@ public class LoginOtpPageElement {
     
     public void ClickToUploadMainPhoto() throws InterruptedException
     {
-                 driver.findElement(clickToUpload).click();
-                 Thread.sleep(3000);
+        		 ExplicitWait(clickToUpload);         
+        		 driver.findElement(clickToUpload).click();
+        		 ExplicitWait(cameraClick); 
                  driver.findElement(cameraClick).click();
-                 Thread.sleep(3000);
+                 ExplicitWait(cameraShutterButton); 
                  driver.findElement(cameraShutterButton).click();
-                 Thread.sleep(3000);
+                 ExplicitWait(cameraShutterDone); 
                  driver.findElement(cameraShutterDone).click();
     }
     
@@ -393,14 +411,15 @@ public class LoginOtpPageElement {
     
     public void UploadProfilePhoto() throws InterruptedException
     {
+    			ExplicitWait(profilePhotoIcon);	
                  driver.findElement(profilePhotoIcon).click();
-                 Thread.sleep(3000);
+                 ExplicitWait(cameraClick);	
                  driver.findElement(cameraClick).click();
-                 Thread.sleep(3000);
+                 ExplicitWait(cameraShutterButton);	
                  driver.findElement(cameraShutterButton).click();
-                 Thread.sleep(3000);
+                 ExplicitWait(cameraShutterDone);	
                  driver.findElement(cameraShutterDone).click();
-                 Thread.sleep(3000);
+                 ExplicitWait(profilePhotoDone);	
                  driver.findElement(profilePhotoDone).click();
     }
     public void EditTornamentUploadProfilePhoto() throws InterruptedException
@@ -418,22 +437,26 @@ public class LoginOtpPageElement {
     
     public void TeamMenuClick()
     {
-                 driver.findElement(teamOnMenuClick).click();
+        ExplicitWait(teamOnMenuClick);        
+    	driver.findElement(teamOnMenuClick).click();
                  
     }
     public void addIconForTeamClick()
     {
-                 driver.findElement(addIconForTeam).click();
+    	ExplicitWait(addIconForTeam);          
+    	driver.findElement(addIconForTeam).click();
                  
     }
     public void addINewTeamClick()
     {
+    	ExplicitWait(addNewTeam); 
                  driver.findElement(addNewTeam).click();
                  
     }
     public void EnterTeamName(String teamName)
     {
-                 driver.findElement(enterTeamName).sendKeys(teamName);
+    	ExplicitWait(enterTeamName);   
+    	driver.findElement(enterTeamName).sendKeys(teamName);
     }
     public void EditTeamName(String teamName)
     {
@@ -441,8 +464,9 @@ public class LoginOtpPageElement {
     }
     public void EnterTeamCity(String loc) throws InterruptedException
     {
-                 driver.findElement(searchByCity).sendKeys(loc);
-                 Thread.sleep(3000);
+    	ExplicitWait(searchByCity);         
+    	driver.findElement(searchByCity).sendKeys(loc);
+    	ExplicitWait(citySelectionInTeam);
                  driver.findElement(citySelectionInTeam).click();
     }
     public void EditTeamCity(String loc) throws InterruptedException
@@ -458,11 +482,13 @@ public class LoginOtpPageElement {
     }
     public void AddTeamButtonClick()
     {
-                 driver.findElement(addTeamButton).click();
+    	ExplicitWait(addTeamButton);        
+    	driver.findElement(addTeamButton).click();
     }
     public void AddTeamButtonClick2()
     {
-                 driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.TextView")).click();
+    	ExplicitWait("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.TextView");         
+    	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.TextView")).click();
     }
     public void EditSaveTeamButtonClick()
     {
@@ -474,14 +500,15 @@ public class LoginOtpPageElement {
     }
     public void ClickToUploadTeamPhoto() throws InterruptedException
     {
+    	ExplicitWait(teamcameraClick);  
                  driver.findElement(teamcameraClick).click();
-                 Thread.sleep(4000);
+                 ExplicitWait(cameraClick); 
                  driver.findElement(cameraClick).click();
-                 Thread.sleep(4000);
+                 ExplicitWait(cameraShutterButton); 
                  driver.findElement(cameraShutterButton).click();
-                 Thread.sleep(4000);
+                 ExplicitWait(cameraShutterDone); 
                  driver.findElement(cameraShutterDone).click();
-                 Thread.sleep(4000);
+                 ExplicitWait(profilePhotoDone); 
                  driver.findElement(profilePhotoDone).click();
     }
     public void EditClickToUploadTeamPhoto() throws InterruptedException
@@ -502,15 +529,18 @@ public class LoginOtpPageElement {
     }
     public void TeamOneClick()
     {
-                 driver.findElement(TeamOne).click();
+        ExplicitWait(TeamOne);         
+    	driver.findElement(TeamOne).click();
     }
     public void TeamTwoClick()
     {
-                 driver.findElement(TeamTwo).click();
+    	 ExplicitWait(TeamTwo);          
+    	driver.findElement(TeamTwo).click();
     }
     public void PlayerMobileNumber(String num)
     {
-                 driver.findElement(playerMobileNo).sendKeys(num);
+    	ExplicitWait(playerMobileNo);           
+    	driver.findElement(playerMobileNo).sendKeys(num);
     }
     public void EditPagePlayerMobileNumber(String num)
     {
@@ -570,40 +600,49 @@ public class LoginOtpPageElement {
     }
     public void addIconForAddMatchClick()
     {
-                 driver.findElement(addIconForAddMatch).click();
+        ExplicitWait(addIconForAddMatch);         
+    	driver.findElement(addIconForAddMatch).click();
     }
     public void SelectRound()
     {
-                 driver.findElement(RoundNameSelect).click();
+    	 ExplicitWait(RoundNameSelect);          
+    	driver.findElement(RoundNameSelect).click();
     }
     public void GoButtonForRound()
     {
+    	 ExplicitWait(goButtonForRound); 
                  driver.findElement(goButtonForRound).click();
     }
     public void CreateMatchSelectDropDownClick()
     {
+    	 ExplicitWait(CreateMatchSelectDropDown); 
     	driver.findElement(CreateMatchSelectDropDown).click();
     
     }
     public void CreateMatchSelectPoolAClick()
     {
+    	ExplicitWait(createMatchSelectPoolA);
     	driver.findElement(createMatchSelectPoolA).click();
     
     }
     public void TeamOneCameraClick()
     {
+    	ExplicitWait(teamOneCameraIcon);
     	driver.findElement(teamOneCameraIcon).click();
     }
     public void TeamTwoCameraClick()
     {
+    	ExplicitWait(teamTwoCameraIcon);
     	driver.findElement(teamTwoCameraIcon).click();
     }
     public void CreateMatchButtonClick()
     {
+    	ExplicitWait(createMatchButton);
     	driver.findElement(createMatchButton).click();
     }
     public void SelectTeamForCreateMatchClick()
     {
+    	ExplicitWait(selectTeamForCreateMatch);
     	driver.findElement(selectTeamForCreateMatch).click();    	
     }
     
@@ -1057,7 +1096,7 @@ public class LoginOtpPageElement {
     //===============PlaySchedaulMatch=============================================//
     public void PlayIconClick()
     {
-    	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup")).click();
+    	    	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup")).click();
     }
     public void FirstTeamClick()
     {
@@ -1149,7 +1188,7 @@ public class LoginOtpPageElement {
     }
     public void EditProfileIconClick()
     {
-    	String editProfile ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup";
+    	String editProfile ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup";
     	ExplicitWait(editProfile);
     	driver.findElement(By.xpath(editProfile)).click();
     }

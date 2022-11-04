@@ -53,7 +53,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v19.10.01.apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v03.11.01.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -66,8 +66,8 @@ public class BaseClass {
 	  lop = new LoginOtpPageElement(driver);
 	  service = lop.serviceStart(service);
 	  service.start();
-	  Thread.sleep(7000);
-
+	  //Thread.sleep(7000);
+	  lop.SkipFirstPage(); 
 	  }
 	  
 	  //=============================================Login & OTP  Section============================================
@@ -205,16 +205,7 @@ public class BaseClass {
 	public void CreateTournament() throws InterruptedException 
 	{	
 		
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-	    Thread.sleep(3000);
+		LoginToMenu();
 		
 		//lop.firstNameTextbox();
 		//Thread.sleep(2000); 
@@ -222,37 +213,28 @@ public class BaseClass {
 		//Thread.sleep(2000); 
 		//driver.hideKeyboard();
 		//lop.updateButtonclick();
-		Thread.sleep(3000); 
-		lop.MenuPathclick();
-		Thread.sleep(3000); 
+		//Thread.sleep(3000); 
+		//lop.MenuPathclick();
 		lop.CreateTournamentLinkclick();
-		Thread.sleep(5000); 
 		lop.UploadProfilePhoto();
-		Thread.sleep(4000); 
 		lop.ClickToUploadMainPhoto();
 		Thread.sleep(4000); 
 		lop.TournamentNameTextbox("IPL123#");
-		Thread.sleep(3000); 
 		lop.LocationNameTextbox();
-		Thread.sleep(4000);
 		lop.ArenaNameTextbox();
-		Thread.sleep(4000);
 		lop.scrollPage();
-		Thread.sleep(3000); 
 		lop.OrganiserNameTextbox("LionsClub123#");
 		Thread.sleep(2000); 
 		lop.OrganiserContactTextbox("9825964420");
-		Thread.sleep(3000);
-		lop.createtournamentStartDateIcon().click();
-		Thread.sleep(3000);
-		lop.createtournamentSelectStartDate("16 October 2022");
-		Thread.sleep(3000);
-		lop.createtournamentSelecrStartDateOKButton().click(); 
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
+		//lop.createtournamentStartDateIcon().click();
+		//Thread.sleep(3000);
+		//lop.createtournamentSelectStartDate("04 November 2022");
+		//Thread.sleep(3000);
+		//lop.createtournamentSelecrStartDateOKButton().click(); 
 		lop.TournamentCategoryclick();
-		Thread.sleep(3000);
 		lop.CreateTournamentButtonclick();
-		Thread.sleep(2000);		 
+		Thread.sleep(5000);		 
 	}
 	
 	@Test
@@ -476,39 +458,20 @@ public class BaseClass {
 	@Test
 	public void createTeam() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
+		LoginToMenu();
 		lop.MyTournamentLinkClick();
-		Thread.sleep(5000); 
 		//lop.scrollPage();
-		//Thread.sleep(6000);
+		Thread.sleep(3000);
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(5000);
 		lop.TeamMenuClick();
-		Thread.sleep(2000);
 		lop.addIconForTeamClick();
-		Thread.sleep(2000);
 		lop.addINewTeamClick();
-		Thread.sleep(4000);
 		lop.EnterTeamName("Ring");
-		Thread.sleep(3000);
 		lop.EnterTeamCity("Vad");
-		Thread.sleep(3000);
 		lop.ClickToUploadTeamPhoto();
-		Thread.sleep(3000);
 		lop.AddTeamButtonClick();
-		Thread.sleep(8000);
+		Thread.sleep(5000);
 	}
 	
 	@Test
@@ -646,38 +609,22 @@ public class BaseClass {
 	@Test
 	public void AddPlayersInTeam() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		Thread.sleep(3000);
-		lop.MenuPathclick();
-		Thread.sleep(4000); 
+		LoginToMenu();
 		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
-		lop.scrollPage();
-		Thread.sleep(6000);
+		//lop.scrollPage();
+		Thread.sleep(3000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(4000);
 		lop.TeamMenuClick();
-		Thread.sleep(3000);
 		//lop.OKButtonAddNewPlayerScreen();
 		//Thread.sleep(4000);
 		lop.TeamOneClick();
-		Thread.sleep(5000);
 		lop.OKButtonAddNewPlayerScreen();
 		//Thread.sleep(3000);
 		// Make debug point here and click on add player icon manually 
 		//lop.addplayerIconOnEditPageClick();
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
 		lop.PlayerMobileNumber("1236956124");
 		Thread.sleep(2000);
 		lop.PlayerFirstName("VV");
@@ -836,50 +783,26 @@ public class BaseClass {
 	@Test
 	public void CreateMatch() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		Thread.sleep(3000);
-		//put debug , enter OTP and go further
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
+		LoginToMenu();
 		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
+		Thread.sleep(3000); 
 		//lop.scrollPage();
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(4000);
 		lop.addIconForAddMatchClick();
-		Thread.sleep(3000);
 		lop.SelectRound();
-		Thread.sleep(3000);
 		lop.GoButtonForRound();
-		Thread.sleep(5000);
 		lop.CreateMatchSelectDropDownClick();
-		Thread.sleep(3000);
 		lop.CreateMatchSelectPoolAClick();
-		Thread.sleep(3000);
-	    lop.TeamOneCameraClick();
-	    Thread.sleep(3000);
+		lop.TeamOneCameraClick();
 	    lop.SelectTeamForCreateMatchClick();
-	    Thread.sleep(3000);
 	    lop.TeamTwoCameraClick();
-	    Thread.sleep(3000);
 	    lop.SelectTeamForCreateMatchClick();
-	    Thread.sleep(3000);
 	    lop.scrollPage();
-	    Thread.sleep(4000);
 	    lop.CreateMatchButtonClick();
-	    Thread.sleep(8000);
+	    Thread.sleep(5000);
 	   
 	}
 	@Test
@@ -1292,26 +1215,14 @@ public class BaseClass {
 	@Test
 	public void StartSchedualMatch() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		Thread.sleep(3000);
-		//put debug , enter OTP and go further
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
+	    LoginToMenu();
 		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
+		Thread.sleep(3000); 
 		//lop.scrollPage();
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
 		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
+		Thread.sleep(10000); 
 		lop.PlayIconClick();
 		Thread.sleep(4000);
 		lop.FirstTeamClick();
@@ -1389,7 +1300,7 @@ public class BaseClass {
 		lop.scrollPage();
 		lop.VerifyProfileEmailId("aakash.pra@gmail.com");
 		lop.VerifyProfileGender("Male");
-		//lop.VerifyProfileWeight("70");
+		lop.VerifyProfileWeight("70");
 		lop.VerifyProfileBatsman("Batsman");		
 	}
 	
