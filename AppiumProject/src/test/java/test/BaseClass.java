@@ -804,12 +804,46 @@ public class BaseClass {
 	@Test
 	public void CreateMatch() throws InterruptedException 
 	{
-		LoginToMenu();
-		lop.MyTournamentLinkClick();
-		Thread.sleep(3000); 
+		//LoginToMenu();
+		//lop.MyTournamentLinkClick();
+		//Thread.sleep(3000); 
 		//lop.scrollPage();
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
+		AddPlayersInTeam();
+		lop.Back();
+		lop.Back();
+		lop.Back();
+		lop.Back();
+		lop.MenuPathclick();
+		lop.MyTournamentLinkClick();
+		Thread.sleep(5000);
+		lop.selectOurTournamentWithoutScrollInPast();
+		lop.OKButtonOFAddNewTeamsClick();
+		//======================================================//
+		lop.TeamMenuClick();
+		lop.TournamentAboutTab();
+		lop.TournamentAboutTab();
+		lop.TournamentPointsTab();
+		lop.TournamentPointsTab();
+		lop.TournamentGroupTab();
+		Thread.sleep(3000);
+		lop.AddGroupIcon();
+		Thread.sleep(3000);
+		lop.AddGroupName("TestGroup");
+		lop.AddGroupButton();
+		lop.VerifyAddGroupSuccessmessage();
+		lop.AddGroupSuccessmessagePopUpOKButton();
+		lop.EditGroupIconClick();
+		Thread.sleep(3000);
+		lop.SelectFirstTeamInGroup();
+		Thread.sleep(3000);
+		lop.EditGroupIconInsideSaveButtonClick();
+		Thread.sleep(4000);
+		//======================================================//
+		lop.Back();
+		lop.Back();
+		lop.Back();
 		lop.selectOurTournamentWithoutScrollInPast();
 		lop.OKButtonOFAddNewTeamsClick();
 		lop.addIconForAddMatchClick();
@@ -817,13 +851,18 @@ public class BaseClass {
 		lop.GoButtonForRound();
 		lop.CreateMatchSelectDropDownClick();
 		lop.CreateMatchSelectPoolAClick();
+		Thread.sleep(3000);
 		lop.TeamOneCameraClick();
-	    lop.SelectTeamForCreateMatchClick();
+		Thread.sleep(3000);
+		lop.SelectTeamForCreateMatchClick();
+		Thread.sleep(3000);
 	    lop.TeamTwoCameraClick();
+	    Thread.sleep(3000);
 	    lop.SelectTeamForCreateMatchClick();
 	    lop.scrollPage();
+	    lop.scrollPage();
 	    lop.CreateMatchButtonClick();
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	   
 	}
 	@Test
