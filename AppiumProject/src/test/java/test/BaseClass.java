@@ -1247,14 +1247,15 @@ public class BaseClass {
 	@Test
 	public void StartSchedualMatch() throws InterruptedException 
 	{
-	    LoginToMenu();
-		lop.MyTournamentLinkClick();
-		Thread.sleep(3000); 
+	    //LoginToMenu();
+		//lop.MyTournamentLinkClick();
+		//Thread.sleep(3000); 
 		//lop.scrollPage();
 		//Thread.sleep(6000);
 		//lop.SelectOurTornamentClick();
-		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(10000); 
+		//lop.selectOurTournamentWithoutScrollInPast();
+		//Thread.sleep(10000); 
+		CreateMatch();
 		lop.PlayIconClick();
 		Thread.sleep(4000);
 		lop.FirstTeamClick();
