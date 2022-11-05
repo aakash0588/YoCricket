@@ -221,6 +221,7 @@ public class BaseClass {
 		Thread.sleep(4000); 
 		lop.TournamentNameTextbox("IPL123#");
 		lop.LocationNameTextbox();
+		Thread.sleep(3000); 
 		lop.ArenaNameTextbox();
 		lop.scrollPage();
 		lop.OrganiserNameTextbox("LionsClub123#");
@@ -458,11 +459,11 @@ public class BaseClass {
 	@Test
 	public void createTeam() throws InterruptedException 
 	{
-		LoginToMenu();
-		lop.MyTournamentLinkClick();
+		CreateTournament();
+		//lop.MyTournamentLinkClick();
 		//lop.scrollPage();
-		Thread.sleep(3000);
-		lop.selectOurTournamentWithoutScrollInPast();
+		//Thread.sleep(3000);
+		//lop.selectOurTournamentWithoutScrollInPast();
 		lop.OKButtonOFAddNewTeamsClick();
 		lop.TeamMenuClick();
 		lop.addIconForTeamClick();
@@ -471,6 +472,12 @@ public class BaseClass {
 		lop.EnterTeamCity("Vad");
 		lop.ClickToUploadTeamPhoto();
 		lop.AddTeamButtonClick();
+		
+		lop.EnterTeamName("Vin");
+		lop.EnterTeamCity("Vad");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		
 		Thread.sleep(5000);
 	}
 	
@@ -609,7 +616,7 @@ public class BaseClass {
 	@Test
 	public void AddPlayersInTeam() throws InterruptedException 
 	{
-		LoginToMenu();
+		/*LoginToMenu();
 		lop.MyTournamentLinkClick();
 		//lop.scrollPage();
 		Thread.sleep(3000);
@@ -618,31 +625,45 @@ public class BaseClass {
 		lop.OKButtonOFAddNewTeamsClick();
 		lop.TeamMenuClick();
 		//lop.OKButtonAddNewPlayerScreen();
-		//Thread.sleep(4000);
+		//Thread.sleep(4000);*/
+		createTeam();
 		lop.TeamOneClick();
 		lop.OKButtonAddNewPlayerScreen();
 		//Thread.sleep(3000);
 		// Make debug point here and click on add player icon manually 
 		//lop.addplayerIconOnEditPageClick();
 		//Thread.sleep(4000);
-		lop.PlayerMobileNumber("1236956124");
-		Thread.sleep(2000);
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
 		lop.PlayerFirstName("VV");
 		Thread.sleep(2000);
 		lop.PlayerLastName("Lax");
-		Thread.sleep(2000);
 		lop.AddPLayerButtonClick();
-		Thread.sleep(5000);
 		//lop.addplayerIconOnEditPageClick();
 		//Thread.sleep(6000);
-		//lop.PlayerMobileNumber("1236956655");
-		//Thread.sleep(2000);
-		//lop.PlayerFirstName("Saurav");
-		//Thread.sleep(2000);
-		//lop.PlayerLastName("Ganguly");
-		//Thread.sleep(2000);
-		//lop.AddPLayerButtonClick();
-		//Thread.sleep(6000);	
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Saurav");
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(5000);	
+		lop.Back();
+		lop.Back();
+		lop.Back();
+		lop.TeamMenuClick();
+		lop.TeamTwoClick();
+		lop.OKButtonAddNewPlayerScreen();
+		// Make debug point here and click on add player icon manually 
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("VV");
+		Thread.sleep(2000);
+		lop.PlayerLastName("Lax");
+		lop.AddPLayerButtonClick();
+		//lop.addplayerIconOnEditPageClick();
+		//Thread.sleep(6000);
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Saurav");
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(5000);	
 	}
 	
 	@Test
@@ -860,44 +881,32 @@ public class BaseClass {
 	public void CreateGroup() throws InterruptedException 
 	{	
 		
-		lop.countryCodeDropdown();
-		Thread.sleep(3000);
-		lop.countryCodeSelection();
-		Thread.sleep(3000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(3000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
-		lop.MyTournamentLinkClick();
-		Thread.sleep(4000); 
+		CreateTournament();
 		//lop.scrollPage();
 		//Thread.sleep(6000);
-		lop.selectOurTournamentWithoutScrollInPast();
+		//lop.selectOurTournamentWithoutScrollInPast();
 		//lop.SelectOurTornamentClick();
-		Thread.sleep(10000);
+		//Thread.sleep(15);
 		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(5000);
+		lop.TeamMenuClick();
+		//Thread.sleep(5);
 		lop.TournamentAboutTab();
-		Thread.sleep(3000); 
+		//Thread.sleep(7);
+		lop.TournamentAboutTab();
+		//Thread.sleep(7);
 		lop.TournamentPointsTab();
-		Thread.sleep(3000);
+		//Thread.sleep(7);
+		lop.TournamentPointsTab();
+		//Thread.sleep(7);
 		lop.TournamentGroupTab();
 		Thread.sleep(3000);
 		lop.AddGroupIcon();
 		Thread.sleep(3000);
 		lop.AddGroupName("TestGroup");
-		Thread.sleep(3000);
 		lop.AddGroupButton();
-		Thread.sleep(3000);
 		lop.VerifyAddGroupSuccessmessage();
-		Thread.sleep(3000);
 		lop.AddGroupSuccessmessagePopUpOKButton();
-		Thread.sleep(7000);
 		lop.EditGroupIconClick();
-		Thread.sleep(4000);
 		lop.VerifyAddedGroupName();
 		Thread.sleep(3000);
 		
@@ -1292,7 +1301,7 @@ public class BaseClass {
 		lop.ProfileUpdateButton();
 		lop.ProfileUpdateSuccessMsg();
 		lop.ProfileUpdateSuccessMsgOKButton();
-		lop.VerifyProfileLocation("Surat, Gujarat, India");
+		//lop.VerifyProfileLocation("Surat, Gujarat, India");
 		lop.EditProfileIconClick();
 		lop.VerifyEditProfileLastName(lastName);
 		lop.VerifyEditProfileFirstName(firstName);
@@ -1337,6 +1346,7 @@ public class BaseClass {
 		lop.EditProfileWeightValidation();
 	}
 	//=============================================================================//
+	@Test
 	public void LoginToMenu() throws InterruptedException 
 	{
 		lop.countryCodeDropdown();
@@ -1344,6 +1354,11 @@ public class BaseClass {
 		lop.privacyPolicyCheckbox();
 		lop.getOTPButton();
 		lop.otp("1","2","3","4");
+		
+		lop.firstNameTextbox();
+		lop.LastNameTextbox();
+		lop.updateButtonclick();
+		
 		lop.MenuPathclick();
 	}
 	
