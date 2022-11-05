@@ -889,15 +889,10 @@ public class BaseClass {
 		//Thread.sleep(15);
 		lop.OKButtonOFAddNewTeamsClick();
 		lop.TeamMenuClick();
-		//Thread.sleep(5);
 		lop.TournamentAboutTab();
-		//Thread.sleep(7);
 		lop.TournamentAboutTab();
-		//Thread.sleep(7);
 		lop.TournamentPointsTab();
-		//Thread.sleep(7);
 		lop.TournamentPointsTab();
-		//Thread.sleep(7);
 		lop.TournamentGroupTab();
 		Thread.sleep(3000);
 		lop.AddGroupIcon();
@@ -908,8 +903,7 @@ public class BaseClass {
 		lop.AddGroupSuccessmessagePopUpOKButton();
 		lop.EditGroupIconClick();
 		lop.VerifyAddedGroupName();
-		Thread.sleep(3000);
-		
+		Thread.sleep(3000);		
 	}
 	
 	@Test
