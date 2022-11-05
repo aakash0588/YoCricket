@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="CreateGroup"/>
+          <include name="Gallery"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
