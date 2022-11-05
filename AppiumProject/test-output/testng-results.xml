@@ -2,20 +2,20 @@
 <testng-results ignored="37" total="38" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-05T16:05:05 IST" name="Default suite" finished-at="2022-11-05T16:07:01 IST" duration-ms="116592">
+  <suite started-at="2022-11-05T16:13:37 IST" name="Default suite" finished-at="2022-11-05T16:16:10 IST" duration-ms="153598">
     <groups>
     </groups>
-    <test started-at="2022-11-05T16:05:05 IST" name="Default test" finished-at="2022-11-05T16:07:01 IST" duration-ms="116592">
+    <test started-at="2022-11-05T16:13:37 IST" name="Default test" finished-at="2022-11-05T16:16:10 IST" duration-ms="153598">
       <class name="test.BaseClass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-05T16:05:05 IST" name="setup" finished-at="2022-11-05T16:05:20 IST" duration-ms="15092" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-05T16:13:37 IST" name="setup" finished-at="2022-11-05T16:13:52 IST" duration-ms="15618" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CreateGroup()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-05T16:05:20 IST" name="CreateGroup" finished-at="2022-11-05T16:07:01 IST" duration-ms="100767" status="PASS">
+        <test-method signature="Gallery()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-05T16:13:52 IST" name="Gallery" finished-at="2022-11-05T16:16:10 IST" duration-ms="137264" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateGroup -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-05T16:07:01 IST" name="teardown" finished-at="2022-11-05T16:07:01 IST" duration-ms="671" status="PASS">
+        </test-method> <!-- Gallery -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-05T16:16:10 IST" name="teardown" finished-at="2022-11-05T16:16:10 IST" duration-ms="654" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
