@@ -5,9 +5,9 @@
     <classes>
       <class name="test.BaseClass">
         <methods>
+          <include name="VerifyInvalidOTP"/>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="CreateMatch"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
