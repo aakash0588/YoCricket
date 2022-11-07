@@ -2,20 +2,20 @@
 <testng-results ignored="37" total="38" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-07T08:52:34 IST" name="Default suite" finished-at="2022-11-07T08:53:09 IST" duration-ms="35189">
+  <suite started-at="2022-11-07T09:29:26 IST" name="Default suite" finished-at="2022-11-07T09:29:55 IST" duration-ms="28574">
     <groups>
     </groups>
-    <test started-at="2022-11-07T08:52:34 IST" name="Default test" finished-at="2022-11-07T08:53:09 IST" duration-ms="35189">
+    <test started-at="2022-11-07T09:29:26 IST" name="Default test" finished-at="2022-11-07T09:29:55 IST" duration-ms="28574">
       <class name="test.BaseClass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-07T08:52:34 IST" name="setup" finished-at="2022-11-07T08:52:47 IST" duration-ms="13570" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-07T09:29:26 IST" name="setup" finished-at="2022-11-07T09:29:43 IST" duration-ms="16526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyInvalidOTP()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-07T08:52:48 IST" name="VerifyInvalidOTP" finished-at="2022-11-07T08:53:08 IST" duration-ms="20708" status="PASS">
+        <test-method signature="VerifyMobileNumber()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-07T09:29:43 IST" name="VerifyMobileNumber" finished-at="2022-11-07T09:29:54 IST" duration-ms="11229" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyInvalidOTP -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-07T08:53:08 IST" name="teardown" finished-at="2022-11-07T08:53:09 IST" duration-ms="865" status="PASS">
+        </test-method> <!-- VerifyMobileNumber -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BaseClass@4c1909a3]" started-at="2022-11-07T09:29:54 IST" name="teardown" finished-at="2022-11-07T09:29:55 IST" duration-ms="758" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

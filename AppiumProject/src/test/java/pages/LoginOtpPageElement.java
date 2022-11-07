@@ -161,12 +161,14 @@ public class LoginOtpPageElement {
     }
     public void continueAsGuestpathlinkPresent()
     {
-                 driver.findElement(continueAsGuestpath).isDisplayed();
+    	ExplicitWait(continueAsGuestpath);         
+    	driver.findElement(continueAsGuestpath).isDisplayed();
      }
     
     public String continueAsGuestpathlinkText()
     {
-                 return driver.findElement(continueAsGuestpath).getText();
+    	ExplicitWait(continueAsGuestpath);         
+    	return driver.findElement(continueAsGuestpath).getText();
      }
     
     public void firstNameTextbox()

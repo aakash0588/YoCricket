@@ -39,7 +39,9 @@ public class BaseClass {
 	  public String getOtpButton2="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView";
 	  public String submitOtp="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup";
 	  public String mobileNumbarManadatoryMessage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
-	  public String mobileNumberMaxDigitMessage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
+	  public String mobileNumberMaxDigitMessage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
+	  public String MobileNumberMinimumLength="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
+	  public String ValidMobileNumberMsg="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
 	  public String countryCode="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.widget.TextView";
 	  public String flag = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView";
 	  public String countryListFrame = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView";
@@ -91,38 +93,37 @@ public class BaseClass {
 	@Test
 	public void VerifyMobileNumber() throws InterruptedException
 	{
-			
-		  lop.getOTPButton();
-		  Thread.sleep(3000);
+		lop.privacyPolicyCheckbox();	
+		lop.getOTPButton();
+		  
+		  lop.ExplicitWait(By.xpath(mobileNumbarManadatoryMessage));
 		  String msg =driver.findElement(By.xpath(mobileNumbarManadatoryMessage)).getText();
-		  Thread.sleep(2000); 
 		  assertEquals(msg,"Mobile number is a mandatory field, it cannot be empty.", "Validation Message not match with expected");
+		  
+		  lop.ExplicitWait(By.className("android.widget.EditText"));
 		  driver.findElement(By.className("android.widget.EditText")).sendKeys( "98259644204567");
-		  Thread.sleep(2000);
+		  lop.ExplicitWait(getOtpButton2);
 		  driver.findElement(By.xpath(getOtpButton2)).click();
-		  Thread.sleep(3000);		  
-		  driver.findElement(By.xpath(mobileNumberMaxDigitMessage)).isDisplayed();
-		  Thread.sleep(2000);
-		   driver.findElement(By.className("android.widget.EditText")).sendKeys( "+916442045");
-		  Thread.sleep(2000);
+		  lop.ExplicitWait(mobileNumberMaxDigitMessage);	  
+		  String msg5=driver.findElement(By.xpath(mobileNumberMaxDigitMessage)).getText();
+		  assertEquals(msg5,"phoneNumber should have a maximum length of 10", "Validation Message not match with expected");
+		  
+		  lop.ExplicitWait(By.className("android.widget.EditText"));
+		  driver.findElement(By.className("android.widget.EditText")).sendKeys( "6442045");
+		  lop.ExplicitWait(getOtpButton2);
 		  driver.findElement(By.xpath(getOtpButton2)).click();
-		  Thread.sleep(3000);		  
-		  String msg3 =driver.findElement(By.xpath(mobileNumberMaxDigitMessage)).getText();
-		  assertEquals(msg3,"Please enter a valid mobile number.", "Validation Message not match with expected");
-		/*
-		 * driver.findElement(By.xpath(
-		 * "//android.widget.EditText[@content-desc=\"otpInput-0\"]")).sendKeys("1");
-		 * Thread.sleep(2000); driver.findElement(By.xpath(
-		 * "//android.widget.EditText[@content-desc=\"otpInput-1\"]")).sendKeys("2");
-		 * Thread.sleep(2000); driver.findElement(By.xpath(
-		 * "//android.widget.EditText[@content-desc=\"otpInput-2\"]")).sendKeys("3");
-		 * Thread.sleep(2000); driver.findElement(By.xpath(
-		 * "//android.widget.EditText[@content-desc=\"otpInput-3\"]")).sendKeys("4");
-		 * Thread.sleep(2000); driver.findElement(By.xpath(submitOtp)).click();
-		 */
+		  lop.ExplicitWait(mobileNumberMaxDigitMessage);	  
+		  String msg3 =driver.findElement(By.xpath(MobileNumberMinimumLength)).getText();
+		  assertEquals(msg3,"phoneNumber should have a minimum length of 10", "Validation Message not match with expected");		
 		
-		System.out.println("I am inside");
-		  //service.stop();
+		  
+		  driver.findElement(By.className("android.widget.EditText")).sendKeys( "abcd6442045");
+		   lop.ExplicitWait(getOtpButton2);
+		  driver.findElement(By.xpath(getOtpButton2)).click();
+		  lop.ExplicitWait(ValidMobileNumberMsg);	  
+		  String msg4 =driver.findElement(By.xpath(ValidMobileNumberMsg)).getText();
+		  assertEquals(msg4,"Please enter a valid mobile number.", "Validation Message not match with expected");		
+		 
 		
 	}
 	
@@ -130,15 +131,15 @@ public class BaseClass {
 	public void VerifyCountryDropdown() throws InterruptedException 
 	{					
 		lop.countryCodeDropdown();
-		Thread.sleep(3000);
+		lop.ExplicitWait(countryListFrame);
 		String sc= driver.findElement(By.xpath(countryListFrame)).getAttribute("scrollable");
 		assertEquals(sc,"true", "country is not scrollable");
-		Thread.sleep(2000);
+		lop.ExplicitWait(By.className("android.widget.EditText"));
 		driver.findElement(By.className("android.widget.EditText")).sendKeys("91");
 		Thread.sleep(3000); 
 		//India (+91)
 		driver.findElement(By.className("android.widget.TextView")).click();
-		Thread.sleep(3000); 
+		lop.ExplicitWait(countryCode);
 		String code = driver.findElement(By.xpath(countryCode)).getText();
 		assertEquals(code,"+91", "Code is not match with expected");
 		String ne= driver.findElement(By.xpath(countryCode)).getAttribute("clickable");
