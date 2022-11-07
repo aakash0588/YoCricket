@@ -161,17 +161,14 @@ public class BaseClass {
 	{	
 		
 		lop.countryCodeDropdown();
-		Thread.sleep(2000);
 		lop.countryCodeSelection();
 		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
 		Thread.sleep(2000);
 		lop.getOTPButton();
 		Thread.sleep(4000);
 		lop.otp("1","2","7","4");
 		String invalidAlertMsg = lop.VerifyInalidOtpMessage();
 		assertEquals(invalidAlertMsg,"Please enter a valid OTP.", "Text is not correct");
-		
 		lop.validOtpAlertOKButtonclick();
 		Thread.sleep(3000);
 		}

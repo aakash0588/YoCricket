@@ -189,7 +189,8 @@ public class LoginOtpPageElement {
     
     public void validOtpAlertOKButtonclick()
     {
-                 driver.findElement(okButttonForInvalidOtpAlert).click();
+    	ExplicitWait(okButttonForInvalidOtpAlert);        
+    	driver.findElement(okButttonForInvalidOtpAlert).click();
      }
     
     public String VerifyInalidOtpMessage()
