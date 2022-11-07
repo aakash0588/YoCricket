@@ -195,7 +195,8 @@ public class LoginOtpPageElement {
     
     public String VerifyInalidOtpMessage()
     {
-                 return driver.findElement(validOtpMessagePath).getText();
+    	ExplicitWait(validOtpMessagePath);         
+    	return driver.findElement(validOtpMessagePath).getText();
      }
     
     public void MenuPathclick()

@@ -162,10 +162,8 @@ public class BaseClass {
 		
 		lop.countryCodeDropdown();
 		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		Thread.sleep(2000);
+		lop.privacyPolicyCheckbox();
 		lop.getOTPButton();
-		Thread.sleep(4000);
 		lop.otp("1","2","7","4");
 		String invalidAlertMsg = lop.VerifyInalidOtpMessage();
 		assertEquals(invalidAlertMsg,"Please enter a valid OTP.", "Text is not correct");
