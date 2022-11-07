@@ -5,8 +5,8 @@
     <classes>
       <class name="test.BaseClass">
         <methods>
-          <include name="VerifyInvalidOTP"/>
           <include name="setup"/>
+          <include name="VerifyMobileNumber"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- test.BaseClass -->
