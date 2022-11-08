@@ -171,16 +171,36 @@ public class LoginOtpPageElement {
     	return driver.findElement(continueAsGuestpath).getText();
      }
     
-    public void firstNameTextbox()
+    public void firstNameTextbox(String name)
     {
         ExplicitWait(firstNamePath);         
-    	driver.findElement(firstNamePath).sendKeys("AJP");
+    	driver.findElement(firstNamePath).sendKeys(name);
      }
     
-    public void LastNameTextbox()
+    public void LastNameTextbox(String name)
     {
     	ExplicitWait(lastNamePath);          
-    	driver.findElement(lastNamePath).sendKeys("Prajapati");
+    	driver.findElement(lastNamePath).sendKeys(name);
+     }
+    public void firstNameMandatoryMsg()
+    {
+        By path = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]");
+    	ExplicitWait(path);         
+    	assertMessage(path,"Please Enter First Name","Invalid Message");
+     }
+    
+    public void LastNameMandatoryMsg()
+    {
+        By path = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]");
+    	ExplicitWait(path);         
+    	assertMessage(path,"Please Enter Last Name","Invalid Message");
+     }
+    
+    public void ProfileNameVerificationForMaxLenghth()
+    {
+        By path = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]");
+    	ExplicitWait(path);         
+    	assertMessage(path,"A1hjkasdhla;dljhadjal;ja;dopujqpoweuqopwejkqpowejm A1hjkasdhla;dljhadjal;ja;dopujqpoweuqopwejkqpowejm","Invalid Message");
      }
     
     public void updateButtonclick()
@@ -393,7 +413,7 @@ public class LoginOtpPageElement {
     	  int startx = size.width / 2;
     	  System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx);
     	  
-    	  TouchAction touch = new TouchAction(driver);
+    	 TouchAction touch = new TouchAction(driver);
         touch.press(PointOption.point(endx,endy)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(startx,starty)).release().perform();
     }
     

@@ -177,22 +177,36 @@ public class BaseClass {
 	{	
 		
 		lop.countryCodeDropdown();
-		Thread.sleep(2000);
 		lop.countryCodeSelection();
-		Thread.sleep(2000);
 		lop.privacyPolicyCheckbox();
 		Thread.sleep(2000);
 		lop.getOTPButton();
-		Thread.sleep(4000);
 		lop.otp("1","2","3","4");
-	    Thread.sleep(3000);
-		
-		lop.firstNameTextbox();
-		Thread.sleep(3000);
-		lop.LastNameTextbox();
-		Thread.sleep(3000);
+	 	//lop.firstNameTextbox();
+		//lop.LastNameTextbox();
 		lop.updateButtonclick();
-		Thread.sleep(3000);
+		lop.firstNameMandatoryMsg();
+		lop.LastNameMandatoryMsg();
+		Thread.sleep(5000);
+	}
+	
+	@Test
+	public void FirstTimeLoginFieldsLengthVerification() throws InterruptedException 
+	{	
+		
+		lop.countryCodeDropdown();
+		lop.countryCodeSelection();
+		lop.privacyPolicyCheckbox();
+		Thread.sleep(2000);
+		lop.getOTPButton();
+		lop.otp("1","2","3","4");
+	 	lop.firstNameTextbox("A1hjkasdhla;dljhadjal;ja;dopujqpoweuqopwejkqpowejmAakash");
+		lop.LastNameTextbox("A1hjkasdhla;dljhadjal;ja;dopujqpoweuqopwejkqpowejmAakash");
+		lop.updateButtonclick();
+		lop.MenuPathclick();
+		lop.ProfileIconClick();
+		lop.ProfileNameVerificationForMaxLenghth();
+		Thread.sleep(5000);
 	}
 		
 	//===================================Tournament Section==========================================//
@@ -1375,8 +1389,8 @@ public class BaseClass {
 		lop.getOTPButton();
 		lop.otp("1","2","3","4");
 		
-		lop.firstNameTextbox();
-		lop.LastNameTextbox();
+		lop.firstNameTextbox("AJP");
+		lop.LastNameTextbox("Prajapati");
 		lop.updateButtonclick();
 		
 		lop.MenuPathclick();
