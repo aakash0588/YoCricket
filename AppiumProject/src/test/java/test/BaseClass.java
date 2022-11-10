@@ -404,20 +404,9 @@ public class BaseClass {
 	@Test
 	public void CreateTournamentFieldsIconValidation() throws InterruptedException 
 	{	
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		Thread.sleep(4000);
-		lop.MenuPathclick();
-		Thread.sleep(4000); 
+
+		LoginToMenu();
 		lop.CreateTournamentLinkclick();
-		Thread.sleep(4000); 
 		lop.CrateTournamentIconValidation();
 	}
 	@Test
