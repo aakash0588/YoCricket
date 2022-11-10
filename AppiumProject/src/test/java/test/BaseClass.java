@@ -362,35 +362,21 @@ public class BaseClass {
 	@Test
 	public void CreateTournamentVerifyFieldSMaximumLengthValidation() throws InterruptedException 
 	{	
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
+		LoginToMenu();
 		lop.CreateTournamentLinkclick();
-		Thread.sleep(2000); 
-		lop.TournamentNameTextbox("IPL123#");
-		Thread.sleep(2000); 
+		lop.TournamentNameTextbox("Jhkjhdflklskjhlksjdlkfjslk##djflksjdlfkjsdlkjflksdjfljsdlkcm,xmclkjsdlkfjlksdjflsdjfljsdlkfjsdlkfjlksdflksdjflksjflsjflsjflkjsdlkfjsdljflsdjflsdjflsdjflj");
 		lop.LocationNameTextbox();
-		Thread.sleep(2000);
 		lop.ArenaNameTextbox();
 		Thread.sleep(2000);
 		lop.scrollPage();
-		Thread.sleep(3000); 
-		lop.OrganiserNameTextbox("LionsClub123#");
-		Thread.sleep(2000); 
+		lop.OrganiserNameTextbox("Jhkjhdflklskjhlksjdlkfjslk##djflksjdlfkjsdlkjflksdjfljsdlkcm");
 		lop.OrganiserContactTextbox("9825964420");
-		Thread.sleep(2000); 
 		lop.TournamentCategoryclick();
-		Thread.sleep(2000);
 		lop.CreateTournamentButtonclick();
-		Thread.sleep(2000);		  
+		lop.OrganiserNameTextboxMaxLenghth();
+		lop.scrollPageUp();
+		lop.scrollPageUp();
+		lop.TournamentNameTextboxMaxLenghth();
 	}
 	
 	@Test
