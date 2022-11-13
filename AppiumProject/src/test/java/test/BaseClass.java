@@ -427,24 +427,7 @@ public class BaseClass {
 	@Test
 	public void CreateTeamPaeValidation() throws InterruptedException 
 	{
-		Thread.sleep(4000);
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
-		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
-		//lop.scrollPage();
-		//Thread.sleep(6000);
-		//lop.SelectOurTornamentClick();
-		lop.selectOurTournamentWithoutScrollInPast();
+		CreateTournament();
 		Thread.sleep(4000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
