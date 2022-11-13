@@ -214,15 +214,6 @@ public class BaseClass {
 	{	
 		
 		LoginToMenu();
-		
-		//lop.firstNameTextbox();
-		//Thread.sleep(2000); 
-		//lop.LastNameTextbox();
-		//Thread.sleep(2000); 
-		//driver.hideKeyboard();
-		//lop.updateButtonclick();
-		//Thread.sleep(3000); 
-		//lop.MenuPathclick();
 		lop.CreateTournamentLinkclick();
 		lop.UploadProfilePhoto();
 		lop.ClickToUploadMainPhoto();
@@ -235,15 +226,9 @@ public class BaseClass {
 		lop.OrganiserNameTextbox("LionsClub123#");
 		Thread.sleep(2000); 
 		lop.OrganiserContactTextbox("9825964420");
-		//Thread.sleep(3000);
-		//lop.createtournamentStartDateIcon().click();
-		//Thread.sleep(3000);
-		//lop.createtournamentSelectStartDate("04 November 2022");
-		//Thread.sleep(3000);
-		//lop.createtournamentSelecrStartDateOKButton().click(); 
 		lop.TournamentCategoryclick();
 		lop.CreateTournamentButtonclick();
-		Thread.sleep(5000);		 
+		Thread.sleep(7000);		 
 	}
 	
 	@Test
@@ -359,6 +344,14 @@ public class BaseClass {
 		lop.EditTournamentFieldValidation();
 	}
 	
+	@Test
+	public void CreateTournamentPhotoImageSizeValidation() throws InterruptedException 
+	{	
+		
+		LoginToMenu();
+		lop.CreateTournamentLinkclick();
+		lop.CameraGallerySelection();
+	}
 	@Test
 	public void CreateTournamentVerifyFieldSMaximumLengthValidation() throws InterruptedException 
 	{	
