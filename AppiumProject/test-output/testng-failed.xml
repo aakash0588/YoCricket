@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="CreateTournamentVerifyFieldSMaximumLengthValidation"/>
+          <include name="CreateTournamentPhotoImageSizeValidation"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
