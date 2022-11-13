@@ -5,9 +5,9 @@
     <classes>
       <class name="test.BaseClass">
         <methods>
+          <include name="EditTournament"/>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="CreateTournamentPhotoImageSizeValidation"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
