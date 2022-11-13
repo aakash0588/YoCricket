@@ -90,7 +90,7 @@ public class BaseClass {
 		
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyMobileNumber() throws InterruptedException
 	{
 		lop.privacyPolicyCheckbox();	
@@ -127,7 +127,7 @@ public class BaseClass {
 		
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyCountryDropdown() throws InterruptedException 
 	{					
 		lop.countryCodeDropdown();
@@ -149,7 +149,7 @@ public class BaseClass {
 		
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void ContinueAsGuest() throws InterruptedException 
 	{	
 		lop.continueAsGuestpathlinkPresent();
@@ -157,7 +157,7 @@ public class BaseClass {
 		assertEquals(te,"Continue as Guest", "Text is not correct");
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyInvalidOTP() throws InterruptedException 
 	{	
 		
@@ -172,7 +172,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void FirstTimeLoginFieldsVerify() throws InterruptedException 
 	{	
 		
@@ -188,7 +188,7 @@ public class BaseClass {
 		Thread.sleep(5000);
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void FirstTimeLoginFieldsLengthVerification() throws InterruptedException 
 	{	
 		
@@ -209,7 +209,7 @@ public class BaseClass {
 		
 	//===================================Tournament Section==========================================//
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void CreateTournament() throws InterruptedException 
 	{	
 		
@@ -231,7 +231,7 @@ public class BaseClass {
 		Thread.sleep(7000);		 
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void EditTournament() throws InterruptedException 
 	{	
 		
@@ -321,7 +321,7 @@ public class BaseClass {
 		lop.EditTournamentFieldValidation();
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void CreateTournamentPhotoImageSizeValidation() throws InterruptedException 
 	{	
 		
@@ -329,7 +329,7 @@ public class BaseClass {
 		lop.CreateTournamentLinkclick();
 		lop.CameraGallerySelection();
 	}
-	@Test
+	@Test (groups= {"Smoke"})
 	public void CreateTournamentVerifyFieldSMaximumLengthValidation() throws InterruptedException 
 	{	
 		LoginToMenu();
@@ -351,7 +351,7 @@ public class BaseClass {
 		lop.TournamentNameTextboxMaxLenghth();
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void CreateTournamentMandatoryFieldsValidation() throws InterruptedException 
 	{	
 		LoginToMenu();
@@ -359,7 +359,7 @@ public class BaseClass {
 		lop.CrateTournamentFieldValidation();
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void CreateTournamentFieldsIconValidation() throws InterruptedException 
 	{	
 
@@ -367,7 +367,7 @@ public class BaseClass {
 		lop.CreateTournamentLinkclick();
 		lop.CrateTournamentIconValidation();
 	}
-	@Test
+	@Test (groups= {"Smoke"})
 	public void EditTournamentFieldsIconValidation() throws InterruptedException 
 	{	
 		lop.countryCodeDropdown();
@@ -399,7 +399,7 @@ public class BaseClass {
 	
 	//==================================Team Section=============================================================//
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void createTeam() throws InterruptedException 
 	{
 		CreateTournament();
@@ -842,7 +842,7 @@ public class BaseClass {
 	}
 	
 	//===============================Group=====================================//
-	@Test
+	@Test (groups= {"Smoke"})
 	public void CreateGroup() throws InterruptedException 
 	{	
 		
@@ -871,7 +871,7 @@ public class BaseClass {
 		Thread.sleep(3000);		
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void DeleteGroup() throws InterruptedException 
 	{	
 		
@@ -1124,7 +1124,7 @@ public class BaseClass {
 		Thread.sleep(3000);	
 	}
 	//===============================Gallery=======================================//
-	@Test
+	@Test (groups= {"Smoke"})
 	public void Gallery() throws InterruptedException 
 	{			
 	    CreateTournament();
@@ -1151,7 +1151,7 @@ public class BaseClass {
 		Thread.sleep(4000);		
 	}
 	//=======================Toss===========================================//
-	@Test
+	@Test (groups= {"Smoke"})
 	public void Toss() throws InterruptedException 
 	{			
 		lop.countryCodeDropdown();
@@ -1226,7 +1226,7 @@ public class BaseClass {
 	
 	//======================================Profile=======================================//
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void Profile() throws InterruptedException 
 	{
 		LoginToMenu();
@@ -1263,7 +1263,7 @@ public class BaseClass {
 		lop.VerifyProfileBatsman("Batsman");		
 	}
 	
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyProfileFirstNameMandatory() throws InterruptedException 
 	{
 		LoginToMenu();
@@ -1271,7 +1271,7 @@ public class BaseClass {
 		lop.EditProfileIconClick();	
 		lop.EditProfileFirstNameMandatory();
 	}
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyProfileLastNameMandatory() throws InterruptedException 
 	{
 		LoginToMenu();
@@ -1279,7 +1279,7 @@ public class BaseClass {
 		lop.EditProfileIconClick();	
 		lop.EditProfileLastNameMandatory();
 	}
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyProfileEmailIdValidation() throws InterruptedException 
 	{
 		LoginToMenu();
@@ -1287,7 +1287,7 @@ public class BaseClass {
 		lop.EditProfileIconClick();	
 		lop.EditProfileEmailIDValidation();
 	}
-	@Test
+	@Test (groups= {"Smoke"})
 	public void VerifyProfileWeightValidation() throws InterruptedException 
 	{
 		LoginToMenu();
@@ -1296,7 +1296,7 @@ public class BaseClass {
 		lop.EditProfileWeightValidation();
 	}
 	//=============================================================================//
-	@Test
+	@Test (groups= {"Smoke"})
 	public void LoginToMenu() throws InterruptedException 
 	{
 		lop.countryCodeDropdown();
