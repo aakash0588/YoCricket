@@ -55,7 +55,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v03.11.01.apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v12.11.01.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -370,9 +370,11 @@ public class BaseClass {
 		Thread.sleep(2000);
 		lop.scrollPage();
 		lop.OrganiserNameTextbox("Jhkjhdflklskjhlksjdlkfjslk##djflksjdlfkjsdlkjflksdjfljsdlkcm");
-		lop.OrganiserContactTextbox("9825964420");
-		lop.TournamentCategoryclick();
+		lop.OrganiserContactTextbox("abcd##@$%12");
+		//lop.TournamentCategoryclick();
 		lop.CreateTournamentButtonclick();
+		lop.TournamentCategoryValidationMessage();
+		lop.TournamentOrganiserContactFieldValidation();
 		lop.OrganiserNameTextboxMaxLenghth();
 		lop.scrollPageUp();
 		lop.scrollPageUp();

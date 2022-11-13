@@ -6,8 +6,8 @@
       <class name="test.BaseClass">
         <methods>
           <include name="setup"/>
-          <include name="CreateTournamentFieldsIconValidation"/>
           <include name="teardown"/>
+          <include name="CreateTournamentVerifyFieldSMaximumLengthValidation"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
