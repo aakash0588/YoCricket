@@ -235,56 +235,33 @@ public class BaseClass {
 	public void EditTournament() throws InterruptedException 
 	{	
 		
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
-		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
-		//lop.scrollPage();
-		//Thread.sleep(6000);
-		//lop.SelectOurTornamentClick();
-		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
+		CreateTournament();	
 		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		lop.TournamentAboutTab();
-		Thread.sleep(3000); 
+		//Thread.sleep(3000); 
 		lop.tournamnetEditIconClick();
 		Thread.sleep(3000); 
 		lop.EditTournamentClickToUploadMainPhoto();
-		Thread.sleep(4000); 
-		lop.EditTornamentUploadProfilePhoto();
-		Thread.sleep(4000); 
-		lop.EditTournamentNameTextbox("IPL123##");
 		Thread.sleep(2000); 
+		lop.EditTornamentUploadProfilePhoto();
+		Thread.sleep(2000); 
+		lop.EditTournamentNameTextbox("IPL123##");
+		Thread.sleep(3000); 
 		lop.EditLocationNameTextbox();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.EditArenaNameTextbox();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		lop.scrollPage();
 		Thread.sleep(3000); 
 		lop.EditOrganiserNameTextbox("LionsClub123##");
 		Thread.sleep(2000); 
 		lop.EditOrganiserContactTextbox("9825964421");
 		Thread.sleep(3000);
-		lop.EdittournamentStartDateIcon().click();
-		Thread.sleep(2000);
-		lop.createtournamentSelectStartDate("17 October 2022");
-		Thread.sleep(2000);
-		lop.createtournamentSelecrStartDateOKButton().click(); 
-		Thread.sleep(2000);
 		lop.EditTournamentCategoryclick();
 		Thread.sleep(2000);
 		lop.EditTournamentButtonclick();
-		Thread.sleep(5000);		 
+		lop.UpdatedTournamentVerification();
 	}
 	
 	@Test
