@@ -16,6 +16,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -50,12 +51,13 @@ public class BaseClass {
 	  //= new  AppiumServiceBuilder().withAppiumJS(new
 			  //File("C:\\Program Files\\Appium Server GUI\\resources\\app\\node_modules\\appium\\build\\lib\\main.js" )).withIPAddress("127.0.0.1").usingPort(4723).build();
 	  
-	  @BeforeTest (alwaysRun=true)
+	  //@BeforeTest (alwaysRun=true)
+	  @BeforeMethod (alwaysRun=true)
 	  public void setup() throws MalformedURLException, InterruptedException {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v12.11.01.apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v19.11.01.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -75,8 +77,10 @@ public class BaseClass {
 	  //=============================================Login & OTP  Section============================================
 	  
 	@Test (groups= {"Smoke"})
+	
 	public void internetOffTest() throws InterruptedException 
 	{
+		
 		try 
 		{
 			Thread.sleep(2000);
@@ -87,6 +91,7 @@ public class BaseClass {
 		{
 			System.out.println("Internet is Off so Login elementent not coming");			
 		}
+		driver.closeApp();
 		
 	}
 	
@@ -123,7 +128,7 @@ public class BaseClass {
 		  lop.ExplicitWait(ValidMobileNumberMsg);	  
 		  String msg4 =driver.findElement(By.xpath(ValidMobileNumberMsg)).getText();
 		  assertEquals(msg4,"Please enter a valid mobile number.", "Validation Message not match with expected");		
-		 
+		  driver.closeApp();
 		
 	}
 	
@@ -146,15 +151,17 @@ public class BaseClass {
 		assertEquals(ne,"false", "field is editable");
 		String countryName = driver.findElement(By.xpath(flag)).getAttribute("text");
 		assertEquals(countryName,"🇮🇳", "Country Name flag is not correct");
-		
+		driver.closeApp();
 	}
 	
 	@Test (groups= {"Smoke"})
-	public void ContinueAsGuest() throws InterruptedException 
+	public void ContinueAsGuest() throws InterruptedException
 	{	
+		
 		lop.continueAsGuestpathlinkPresent();
 		String te = lop.continueAsGuestpathlinkText();
 		assertEquals(te,"Continue as Guest", "Text is not correct");
+		driver.closeApp();
 	}
 	
 	@Test (groups= {"Smoke"})
@@ -170,12 +177,12 @@ public class BaseClass {
 		assertEquals(invalidAlertMsg,"Please enter a valid OTP.", "Text is not correct");
 		lop.validOtpAlertOKButtonclick();
 		Thread.sleep(3000);
+		driver.closeApp();
 		}
 	
 	@Test (groups= {"Smoke"})
-	public void FirstTimeLoginFieldsVerify() throws InterruptedException 
+	public void FirstTimeLoginFieldsVerify() throws InterruptedException
 	{	
-		
 		lop.countryCodeDropdown();
 		lop.countryCodeSelection();
 		lop.privacyPolicyCheckbox();
@@ -186,12 +193,12 @@ public class BaseClass {
 		lop.firstNameMandatoryMsg();
 		lop.LastNameMandatoryMsg();
 		Thread.sleep(5000);
+		driver.closeApp();
 	}
 	
 	@Test (groups= {"Smoke"})
-	public void FirstTimeLoginFieldsLengthVerification() throws InterruptedException 
+	public void FirstTimeLoginFieldsLengthVerification() throws InterruptedException
 	{	
-		
 		lop.countryCodeDropdown();
 		lop.countryCodeSelection();
 		lop.privacyPolicyCheckbox();
@@ -205,6 +212,8 @@ public class BaseClass {
 		lop.ProfileIconClick();
 		lop.ProfileNameVerificationForMaxLenghth();
 		Thread.sleep(5000);
+		driver.closeApp();
+		
 	}
 		
 	//===================================Tournament Section==========================================//
@@ -218,14 +227,14 @@ public class BaseClass {
 		lop.UploadProfilePhoto();
 		lop.ClickToUploadMainPhoto();
 		Thread.sleep(4000); 
-		lop.TournamentNameTextbox("IPL123#");
+		lop.TournamentNameTextbox("Tournament AP" + lop.getAlphaNumericString(2));
 		lop.LocationNameTextbox();
 		Thread.sleep(3000); 
 		lop.ArenaNameTextbox();
 		lop.scrollPage();
-		lop.OrganiserNameTextbox("LionsClub123#");
+		lop.OrganiserNameTextbox("Club"+lop.getAlphaNumericString(2));
 		Thread.sleep(2000); 
-		lop.OrganiserContactTextbox("9825964420");
+		lop.OrganiserContactTextbox(lop.getAlphaNumericString(10));
 		lop.TournamentCategoryclick();
 		lop.CreateTournamentButtonclick();
 		Thread.sleep(7000);		 
@@ -402,7 +411,8 @@ public class BaseClass {
 	@Test (groups= {"Smoke"})
 	public void createTeam() throws InterruptedException 
 	{
-		CreateTournament();
+		//LoginToMenu(); // need to remove
+		CreateTournament();//....need to undo
 		//lop.MyTournamentLinkClick();
 		//lop.scrollPage();
 		//Thread.sleep(3000);
@@ -411,15 +421,100 @@ public class BaseClass {
 		lop.TeamMenuClick();
 		lop.addIconForTeamClick();
 		lop.addINewTeamClick();
-		lop.EnterTeamName("Ring");
-		lop.EnterTeamCity("Vad");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
 		
-		lop.EnterTeamName("Vin");
-		lop.EnterTeamCity("Vad");
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
 		lop.ClickToUploadTeamPhoto();
 		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		/*lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("raj");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("raj");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("raj");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
+		lop.EnterTeamCity("raj");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();   */
 		
 		Thread.sleep(5000);
 	}
@@ -542,8 +637,8 @@ public class BaseClass {
 	@Test
 	public void AddPlayersInTeam() throws InterruptedException 
 	{
-		/*LoginToMenu();
-		lop.MyTournamentLinkClick();
+		//LoginToMenu();
+		/*lop.MyTournamentLinkClick();
 		//lop.scrollPage();
 		Thread.sleep(3000);
 		//lop.SelectOurTornamentClick();
@@ -552,32 +647,113 @@ public class BaseClass {
 		lop.TeamMenuClick();
 		//lop.OKButtonAddNewPlayerScreen();
 		//Thread.sleep(4000);*/
-		createTeam();
-		lop.TeamOneClick();
-		lop.OKButtonAddNewPlayerScreen();
-		//Thread.sleep(3000);
+		
+		createTeam();//...need to undo
+		lop.TeamOneClick();//....need to undo
+		lop.OKButtonAddNewPlayerScreen();//...need to undo
+		Thread.sleep(3000);
 		// Make debug point here and click on add player icon manually 
 		//lop.addplayerIconOnEditPageClick();
-		//Thread.sleep(4000);
+		//Thread.sleep(20000);
+	//	for(int i=1;i<=16;i++)
+		//{
+		lop.EditTeamCityLocationTextfieldClick();
+		lop.AddPlayerPlusIcon();			
 		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("VV");
+		lop.PlayerFirstName("tanmay" + lop.getAlphaNumericString(3));
+		//Thread.sleep(2000);
+		lop.PlayerLastName("Lax");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(2000);
+		//lop.addplayerIconOnEditPageClick();
+		//Thread.sleep(6000);
+
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Chiman " + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Dip");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(1000);
+		
+		/*lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Swa " + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("AP " + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Mega " + lop.getAlphaNumericString(3));
+		//Thread.sleep(1000);
+		lop.PlayerLastName("Lax");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		//lop.addplayerIconOnEditPageClick();
+		//Thread.sleep(6000);
+
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Apurva " + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Dip");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Tim"  + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("DP" + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Omega" + lop.getAlphaNumericString(3));
 		Thread.sleep(2000);
 		lop.PlayerLastName("Lax");
 		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
 		//lop.addplayerIconOnEditPageClick();
 		//Thread.sleep(6000);
+
 		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Saurav");
+		lop.PlayerFirstName("BR " + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Dip");
+		lop.AddPLayerButtonClick();
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("Brown " + lop.getAlphaNumericString(3));
 		lop.PlayerLastName("Ganguly");
 		lop.AddPLayerButtonClick();
-		Thread.sleep(5000);	
+		//Thread.sleep(1000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("sou " + lop.getAlphaNumericString(3));
+		lop.PlayerLastName("Ganguly");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(2000);
+		lop.Back();
+		lop.Back();
+		}*/
+		Thread.sleep(3000);	
 		lop.Back();
 		lop.Back();
 		lop.Back();
+		Thread.sleep(2000);	
 		lop.TeamMenuClick();
 		lop.TeamTwoClick();
 		lop.OKButtonAddNewPlayerScreen();
+		Thread.sleep(3000);	
 		// Make debug point here and click on add player icon manually 
+		lop.EditTeamCityLocationTextfieldClick();
+		lop.AddPlayerPlusIcon();
 		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
 		lop.PlayerFirstName("VV");
 		Thread.sleep(2000);
@@ -589,7 +765,7 @@ public class BaseClass {
 		lop.PlayerFirstName("Saurav");
 		lop.PlayerLastName("Ganguly");
 		lop.AddPLayerButtonClick();
-		Thread.sleep(5000);	
+		Thread.sleep(5000);	  //need to Undo
 	}
 	
 	@Test
@@ -758,14 +934,18 @@ public class BaseClass {
 		Thread.sleep(3000);
 		lop.AddGroupName("TestGroup");
 		lop.AddGroupButton();
-		lop.VerifyAddGroupSuccessmessage();
+		//lop.VerifyAddGroupSuccessmessage();
+		Thread.sleep(3000);
 		lop.AddGroupSuccessmessagePopUpOKButton();
 		lop.EditGroupIconClick();
 		Thread.sleep(3000);
 		lop.SelectFirstTeamInGroup();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		lop.SelectSecondTeamInGroup();
+		Thread.sleep(1000);
 		lop.EditGroupIconInsideSaveButtonClick();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		lop.VerifyMessageAddedTeamInGroupPopUpOKBUtton();
 		//======================================================//
 		lop.Back();
 		lop.Back();
@@ -775,6 +955,7 @@ public class BaseClass {
 		lop.addIconForAddMatchClick();
 		lop.SelectRound();
 		lop.GoButtonForRound();
+		Thread.sleep(2000);
 		lop.CreateMatchSelectDropDownClick();
 		lop.CreateMatchSelectPoolAClick();
 		Thread.sleep(3000);
@@ -1299,7 +1480,7 @@ public class BaseClass {
 	@Test (groups= {"Smoke"})
 	public void LoginToMenu() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
+		//lop.countryCodeDropdown();
 		lop.countryCodeSelection();
 		lop.privacyPolicyCheckbox();
 		lop.getOTPButton();
@@ -1312,7 +1493,7 @@ public class BaseClass {
 		lop.MenuPathclick();
 	}
 	
-	@AfterTest 
+	@AfterTest (alwaysRun=true)
 	  public void teardown() {
 		  
 		  driver.quit();

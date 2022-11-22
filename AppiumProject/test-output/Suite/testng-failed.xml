@@ -10,9 +10,27 @@
     <classes>
       <class name="test.BaseClass">
         <methods>
+          <include name="VerifyInvalidOTP"/>
           <include name="setup"/>
+          <include name="CreateTournamentMandatoryFieldsValidation"/>
+          <include name="VerifyMobileNumber"/>
+          <include name="VerifyProfileLastNameMandatory"/>
+          <include name="teardown"/>
+          <include name="EditTournamentFieldsIconValidation"/>
+          <include name="CreateTournament"/>
+          <include name="Gallery"/>
+          <include name="ContinueAsGuest"/>
+          <include name="VerifyProfileEmailIdValidation"/>
+          <include name="CreateTournamentVerifyFieldSMaximumLengthValidation"/>
+          <include name="LoginToMenu"/>
+          <include name="VerifyProfileWeightValidation"/>
           <include name="VerifyCountryDropdown"/>
+          <include name="VerifyProfileFirstNameMandatory"/>
           <include name="internetOffTest"/>
+          <include name="DeleteGroup"/>
+          <include name="Profile"/>
+          <include name="Toss"/>
+          <include name="createTeam"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>

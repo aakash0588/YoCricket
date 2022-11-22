@@ -6,7 +6,7 @@
 	<include name="Smoke"/>
 	</run>
 </groups>
-  <test thread-count="5" name="Test">
+  <test thread-count="0" name="Test">
     <classes>
       <class name="test.BaseClass"/>
     </classes>
