@@ -946,6 +946,7 @@ public class BaseClass {
 		lop.EditGroupIconInsideSaveButtonClick();
 		Thread.sleep(2000);
 		lop.VerifyMessageAddedTeamInGroupPopUpOKBUtton();
+		Thread.sleep(3000);
 		//======================================================//
 		lop.Back();
 		lop.Back();
@@ -1402,7 +1403,42 @@ public class BaseClass {
 		lop.Back();
 		Thread.sleep(3000);
 		lop.GoButtonOnSelectSquad();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
+	}
+	
+	//========================================Play Match===============================//
+	
+	@Test
+	public void PlayMatch() throws InterruptedException 
+	{
+		StartSchedualMatch();
+		//LoginToMenu();
+		//lop.MyTournamentLinkClick();
+		//Thread.sleep(3000); 		
+		//lop.selectOurTournamentWithoutScrollInPast();
+		Thread.sleep(3000); 
+		//lop.PlayIconClick();
+		lop.SelectStrikerPlayer();
+		Thread.sleep(3000); 
+		lop.SelectStrikerPlayerCheckbox();
+		Thread.sleep(3000); 
+		lop.SelectNonStrikerPlayer();
+		Thread.sleep(3000); 
+		lop.SelectNonStrikerPlayerCheckBox();
+		Thread.sleep(3000); 
+		lop.SelectBowler();
+		Thread.sleep(3000); 
+		lop.SelectBowlerCheckbox();
+		
+		Thread.sleep(3000);
+		lop.TakeOneRun();
+		Thread.sleep(3000);
+		lop.VerifyTotalRun();
+		Thread.sleep(3000);
+		lop.VerifyTotalBall();
+		Thread.sleep(3000);
+		lop.VerifyOverSummary();
+		Thread.sleep(3000);
 	}
 	
 	//======================================Profile=======================================//
