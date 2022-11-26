@@ -464,6 +464,32 @@ public class BaseClass {
 		//lop.AddTeamButtonClick();
 		//Thread.sleep(4000);
 	}
+	@Test
+	public void CreateTeamPageTeamNameLengthValidation() throws InterruptedException 
+	{
+		CreateTournament();
+		Thread.sleep(4000);
+		lop.OKButtonOFAddNewTeamsClick();
+		Thread.sleep(5000);
+		lop.TeamMenuClick();
+		Thread.sleep(2000);
+		lop.addIconForTeamClick();
+		Thread.sleep(2000);
+		lop.addINewTeamClick();
+		Thread.sleep(4000);
+		lop.EnterTeamName("hjkljhlkdfljsdfjsljflsdjflsjdlfkjsldkjflksdjflksdjflkjsdlkfjlskdjflksdjflsjflkjsdlkfjlskdjflsdnfsdlfnlskdflksdflsjlkfjsdljflsdjflsjdfljsdlfjlsdjflsdjfAakash");
+		Thread.sleep(3000);
+		lop.EnterTeamCity("Vado");
+		Thread.sleep(3000);
+		lop.ClickToUploadTeamPhoto();
+		Thread.sleep(3000);
+		lop.AddTeamButtonClick();
+		Thread.sleep(3000);
+		lop.scrollPage();
+		Thread.sleep(2000);
+		lop.TeamNameLengthVerification();
+		Thread.sleep(2000);
+	}
 
 	@Test
 	public void EditTeam() throws InterruptedException 
