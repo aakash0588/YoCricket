@@ -437,6 +437,36 @@ public class BaseClass {
 	}
 	
 	@Test
+	public void DuplicateTeamNameValidation() throws InterruptedException 
+	{
+		//LoginToMenu(); // need to remove
+		CreateTournament();//....need to undo
+		//lop.MyTournamentLinkClick();
+		//lop.scrollPage();
+		//Thread.sleep(3000);
+		//lop.selectOurTournamentWithoutScrollInPast();
+		lop.OKButtonOFAddNewTeamsClick();
+		lop.TeamMenuClick();
+		lop.addIconForTeamClick();
+		lop.addINewTeamClick();
+		
+		lop.EnterTeamName("Team");
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(2000);
+		
+		lop.EnterTeamName("Team");
+		lop.EnterTeamCity("sur");
+		lop.ClickToUploadTeamPhoto();
+		lop.AddTeamButtonClick();
+		Thread.sleep(3000);	
+		lop.DuplicateTeamVerification();
+		
+	
+	}
+	
+	@Test
 	public void CreateTeamPaeValidation() throws InterruptedException 
 	{
 		CreateTournament();
