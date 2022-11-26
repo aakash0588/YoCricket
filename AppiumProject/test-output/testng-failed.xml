@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="CreateTeamPaeValidation"/>
+          <include name="EditTeam"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>

@@ -494,27 +494,28 @@ public class BaseClass {
 	@Test
 	public void EditTeam() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
+		CreateTournament();
 		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
-		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
-		//lop.scrollPage();
-		//Thread.sleep(6000);
-		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
 		lop.OKButtonOFAddNewTeamsClick();
 		Thread.sleep(5000);
 		lop.TeamMenuClick();
+		Thread.sleep(2000);
+		lop.addIconForTeamClick();
+		Thread.sleep(2000);
+		lop.addINewTeamClick();
+		Thread.sleep(4000);
+		lop.EnterTeamName("Team"+lop.getAlphaNumericString(3));
 		Thread.sleep(3000);
+		lop.EnterTeamCity("Vado");
+		Thread.sleep(3000);
+		lop.ClickToUploadTeamPhoto();
+		Thread.sleep(3000);
+		lop.AddTeamButtonClick();
+		Thread.sleep(5000);
+		//lop.Back();
+		//Thread.sleep(3000);
+		//lop.TeamMenuClick();
+		//Thread.sleep(3000);
 		lop.TeamOneClick();
 		Thread.sleep(3000);
 		lop.OKButtonAddNewPlayerScreen();
@@ -526,7 +527,12 @@ public class BaseClass {
 		lop.EditClickToUploadTeamPhoto();
 		Thread.sleep(5000);
 		lop.EditSaveTeamButtonClick();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
+		lop.Back();
+		Thread.sleep(3000);
+		lop.TeamMenuClick();
+		Thread.sleep(3000);
+		lop.EditedTeamVerification();		
 	}
 	
 	@Test
