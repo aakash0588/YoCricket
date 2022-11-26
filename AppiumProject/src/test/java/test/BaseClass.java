@@ -432,90 +432,7 @@ public class BaseClass {
 		lop.EnterTeamCity("sur");
 		lop.ClickToUploadTeamPhoto();
 		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		/*lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("sur");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("raj");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("raj");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("raj");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();
-		Thread.sleep(2000);
-		
-		lop.EnterTeamName("Team" + lop.getAlphaNumericString(3));
-		lop.EnterTeamCity("raj");
-		lop.ClickToUploadTeamPhoto();
-		lop.AddTeamButtonClick();   */
-		
+		Thread.sleep(2000);		
 		Thread.sleep(5000);
 	}
 	
@@ -542,10 +459,10 @@ public class BaseClass {
 		Thread.sleep(4000);
 		lop.CreateTeamPageValidations();
 		Thread.sleep(4000);
-		lop.EnterTeamName("abc123#");
-		Thread.sleep(4000);
-		lop.AddTeamButtonClick();
-		Thread.sleep(4000);
+		//lop.EnterTeamName("abc123#");
+		//Thread.sleep(4000);
+		//lop.AddTeamButtonClick();
+		//Thread.sleep(4000);
 	}
 
 	@Test
@@ -674,74 +591,7 @@ public class BaseClass {
 		lop.AddPLayerButtonClick();
 		Thread.sleep(1000);
 		
-		/*lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Swa " + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Ganguly");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
 		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("AP " + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Ganguly");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Mega " + lop.getAlphaNumericString(3));
-		//Thread.sleep(1000);
-		lop.PlayerLastName("Lax");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		//lop.addplayerIconOnEditPageClick();
-		//Thread.sleep(6000);
-
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Apurva " + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Dip");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Tim"  + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Ganguly");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("DP" + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Ganguly");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Omega" + lop.getAlphaNumericString(3));
-		Thread.sleep(2000);
-		lop.PlayerLastName("Lax");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		//lop.addplayerIconOnEditPageClick();
-		//Thread.sleep(6000);
-
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("BR " + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Dip");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("Brown " + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Ganguly");
-		lop.AddPLayerButtonClick();
-		//Thread.sleep(1000);
-		
-		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
-		lop.PlayerFirstName("sou " + lop.getAlphaNumericString(3));
-		lop.PlayerLastName("Ganguly");
-		lop.AddPLayerButtonClick();
-		Thread.sleep(2000);
-		lop.Back();
-		lop.Back();
-		}*/
 		Thread.sleep(3000);	
 		lop.Back();
 		lop.Back();
@@ -910,7 +760,7 @@ public class BaseClass {
 		//lop.MyTournamentLinkClick();
 		//Thread.sleep(3000); 
 		//lop.scrollPage();
-		//Thread.sleep(6000);
+		//Thread.sleep(10000);
 		//lop.SelectOurTornamentClick();
 		AddPlayersInTeam();
 		lop.Back();
@@ -1517,15 +1367,15 @@ public class BaseClass {
 	public void LoginToMenu() throws InterruptedException 
 	{
 		//lop.countryCodeDropdown();
-		lop.countryCodeSelection();
-		lop.privacyPolicyCheckbox();
-		lop.getOTPButton();
-		lop.otp("1","2","3","4");
+		//lop.countryCodeSelection();
+		//lop.privacyPolicyCheckbox();
+		//lop.getOTPButton();
+		//lop.otp("1","2","3","4");
 		
-		lop.firstNameTextbox("AJP");
-		lop.LastNameTextbox("Prajapati");
-		lop.updateButtonclick();
-		
+		//lop.firstNameTextbox("AJP");
+		//lop.LastNameTextbox("Prajapati");
+		//lop.updateButtonclick();
+		Thread.sleep(15000);
 		lop.MenuPathclick();
 	}
 	
