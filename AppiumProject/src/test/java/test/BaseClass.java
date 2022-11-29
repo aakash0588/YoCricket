@@ -681,6 +681,35 @@ public class BaseClass {
 	}
 	
 	@Test
+	public void DuplicatePlayersInTeam() throws InterruptedException 
+	{
+		createTeam();//...need to undo
+		lop.TeamOneClick();//....need to undo
+		lop.OKButtonAddNewPlayerScreen();//...need to undo
+		Thread.sleep(3000);
+	
+		lop.EditTeamCityLocationTextfieldClick();
+		lop.AddPlayerPlusIcon();			
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("tanmay");
+		lop.PlayerLastName("Lax");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(2000);
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("tanmay");
+		lop.PlayerLastName("Lax");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(3000);
+		lop.DuplicatePlayerVerification();
+		
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("tanmay");
+		lop.PlayerLastName("");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(3000);
+		lop.DuplicatePlayerVerification();
+	}
 	public void AddPlayersInTeamFieldValidations() throws InterruptedException 
 	{
 		lop.countryCodeDropdown();
@@ -730,32 +759,20 @@ public class BaseClass {
 	@Test
 	public void EditPlayersInTeam() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		Thread.sleep(3000);
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
-		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
-		//lop.scrollPage();
-		//Thread.sleep(6000);
-		//lop.SelectOurTornamentClick();
-		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(15000);
-		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(4000);
-		lop.TeamMenuClick();
-		//Thread.sleep(2000);
-		//lop.OKButtonAddNewPlayerScreen();
+		createTeam();
 		Thread.sleep(4000);
 		lop.TeamOneClick();
+		lop.OKButtonAddNewPlayerScreen();//...need to undo
+		Thread.sleep(3000);
+	
+		lop.EditTeamCityLocationTextfieldClick();
+		lop.AddPlayerPlusIcon();			
+		lop.PlayerMobileNumber(lop.getAlphaNumericString(10));
+		lop.PlayerFirstName("tanmay");
+		lop.PlayerLastName("Lax");
+		lop.AddPLayerButtonClick();
+		Thread.sleep(2000);
+		lop.Back();
 		Thread.sleep(4000);
 		lop.ClickOnEditPlayer();
 		Thread.sleep(4000);
@@ -773,29 +790,7 @@ public class BaseClass {
 	@Test
 	public void EditPlayersInTeamFieldValidations() throws InterruptedException 
 	{
-		lop.countryCodeDropdown();
-		Thread.sleep(2000);
-		lop.countryCodeSelection();
-		Thread.sleep(2000);
-		lop.privacyPolicyCheckbox();
-		Thread.sleep(2000);
-		lop.getOTPButton();
-		Thread.sleep(4000);
-		lop.otp("1","2","3","4");
-		lop.MenuPathclick();
-		Thread.sleep(2000); 
-		lop.MyTournamentLinkClick();
-		Thread.sleep(6000); 
-		//lop.scrollPage();
-		//Thread.sleep(6000);
-		//lop.SelectOurTornamentClick();
-		lop.selectOurTournamentWithoutScrollInPast();
-		Thread.sleep(4000);
-		lop.OKButtonOFAddNewTeamsClick();
-		Thread.sleep(4000);
-		lop.TeamMenuClick();
-		//Thread.sleep(2000);
-		//lop.OKButtonAddNewPlayerScreen();
+		createTeam();
 		Thread.sleep(4000);
 		lop.TeamOneClick();
 		Thread.sleep(4000);
