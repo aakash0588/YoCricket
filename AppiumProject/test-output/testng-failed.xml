@@ -6,8 +6,8 @@
       <class name="test.BaseClass">
         <methods>
           <include name="setup"/>
-          <include name="EditPlayersInTeamFieldValidations"/>
           <include name="teardown"/>
+          <include name="PlayMatch"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
