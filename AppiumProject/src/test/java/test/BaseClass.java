@@ -1413,25 +1413,32 @@ public void createTeam() throws InterruptedException
 		//lop.SelectBowlerCheckbox();
 		
 		//Thread.sleep(3000);
-		lop.TakeOneRun();
+		VerifyScoreScreenCalculation(1,"1/0","(0.1)","1","1 (1)","CRR - 6.00","0 - 1 (0.1)","1(1)","0(0)");
+		
+	}
+	
+	public void VerifyScoreScreenCalculation(int takerun, String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun) throws InterruptedException
+	{
+		lop.TakeRun(takerun);
 		Thread.sleep(3000);
-		lop.VerifyTotalRun();
+		lop.VerifyTotalRun(totalRun);
 		Thread.sleep(3000);
-		lop.VerifyTotalBall();
+		lop.VerifyTotalBall(totalBall);
 		Thread.sleep(3000);
-		lop.VerifyOverSummary();
+		lop.VerifyOverSummary(overSummary);
 		Thread.sleep(2000);
-		lop.VerifyPartnership("1 (1)");
+		lop.VerifyPartnership(partnership);
 		Thread.sleep(2000);
-		lop.VerifyRunRate();
+		lop.VerifyRunRate(runRate);
 		Thread.sleep(2000);
-		lop.VerifyBowlerSummary();
+		lop.VerifyBowlerSummary(bowlerSummary);
 		Thread.sleep(2000);
-		lop.VerifyNonStrikerRun();
+		lop.VerifyNonStrikerRun(nonStrikeRun);
 		Thread.sleep(2000);
-		lop.VerifyStrikerRun();
+		lop.VerifyStrikerRun(StrikeRun);
 		Thread.sleep(2000);
 	}
+
 	
 	//======================================Profile=======================================//
 	
