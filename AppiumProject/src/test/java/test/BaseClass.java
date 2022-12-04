@@ -1413,7 +1413,13 @@ public void createTeam() throws InterruptedException
 		//lop.SelectBowlerCheckbox();
 		
 		//Thread.sleep(3000);
+		
+		VerifyScoreScreenCalculation(0,"0/0","(0.1)","0","0 (1)","CRR - 0.00","0 - 0 (0.1)","0(0)","0(1)");
 		VerifyScoreScreenCalculation(1,"1/0","(0.1)","1","1 (1)","CRR - 6.00","0 - 1 (0.1)","1(1)","0(0)");
+		VerifyScoreScreenCalculation(2,"2/0","(0.1)","2","2 (1)","CRR - 12.00","0 - 2 (0.1)","0(0)","2(1)");
+		VerifyScoreScreenCalculation(3,"3/0","(0.1)","3","3 (1)","CRR - 18.00","0 - 3 (0.1)","3(1)","0(0)");
+		VerifyScoreScreenCalculation(4,"4/0","(0.1)","4","4 (1)","CRR - 24.00","0 - 4 (0.1)","0(0)","4(1)");
+		VerifyScoreScreenCalculation(6,"6/0","(0.1)","6","6 (1)","CRR - 36.00","0 - 6 (0.1)","0(0)","6(1)");
 		
 	}
 	
@@ -1437,6 +1443,8 @@ public void createTeam() throws InterruptedException
 		Thread.sleep(2000);
 		lop.VerifyStrikerRun(StrikeRun);
 		Thread.sleep(2000);
+		lop.UndoButtonClick();
+		Thread.sleep(4000);
 	}
 
 	
