@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="PlayMatch"/>
+          <include name="PlayMatchWithWDRuns"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
