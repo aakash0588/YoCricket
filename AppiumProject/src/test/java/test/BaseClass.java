@@ -57,7 +57,7 @@ public class BaseClass {
 	  
 		  
 	  DesiredCapabilities caps = new DesiredCapabilities();
-	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v02.12.01 (1).apk"); 
+	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\LAPCARE-PC\\git\\YoCricket\\AppiumProject\\src\\test\\java\\resources\\yocricket-v09.12.01.apk"); 
 	  caps.setCapability(CapabilityType.PLATFORM_NAME, "ANDROID");
 	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android SDK built for x86_64");
@@ -411,9 +411,9 @@ public class BaseClass {
 	@Test (groups= {"Smoke"})
 public void createTeam() throws InterruptedException 
 	{
-		LoginToMenu(); // need to remove
-		Thread.sleep(15000);
-		//CreateTournament();//....need to undo
+		//LoginToMenu(); // need to remove
+		//Thread.sleep(15000);
+		CreateTournament();//....need to undo
 		//lop.MyTournamentLinkClick();
 		//lop.scrollPage();
 		//Thread.sleep(3000);
