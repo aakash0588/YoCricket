@@ -1423,6 +1423,95 @@ public void createTeam() throws InterruptedException
 		
 	}
 	
+	@Test
+	public void PlayMatchWithMoreRuns() throws InterruptedException 
+	{
+		
+		LoginToMenu();
+		Thread.sleep(25000); 
+		lop.moreRunsButtonClick();
+		lop.MoreRuns4ButtonOneClick();
+		Thread.sleep(3000);			
+		// VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun)
+		   VerifyScoreScreenCalculationAfterAction("4/0","(0.1)","4","4 (1)","CRR - 24.00","0 - 4 (0.1)","0(0)","4(1)");
+		
+	}
+	@Test
+	public void PlayMatchWithPenalatyRuns() throws InterruptedException 
+	{
+		
+		LoginToMenu();
+		Thread.sleep(25000); 
+		lop.penaltyButtonClick();
+		Thread.sleep(3000);
+		lop.MoreRuns7ButtonFourClick();
+		Thread.sleep(3000);		
+	
+		// VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun)
+		   VerifyScoreScreenCalculationAfterAction("4/0","(0.0)","4","4 (1)","CRR - Infinity","0 - 0 (0.1)","0(0)","0(1)");
+		
+	}
+	
+	public void PlayMatchWithLBRuns() throws InterruptedException 
+	{
+		
+		LoginToMenu();
+		Thread.sleep(25000); 
+		lop.LBButtonClick();
+		Thread.sleep(3000);
+		lop.MoreRuns7ButtonFourClick();
+		Thread.sleep(3000);		
+	
+		// VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun)
+		   VerifyScoreScreenCalculationAfterAction("4/0","(0.1)","4","4 (1)","CRR - 24.00","0 - 0 (0.1)","0(0)","0(1)");
+		
+	}
+	
+	public void PlayMatchWithBYERuns() throws InterruptedException 
+	{
+		
+		LoginToMenu();
+		Thread.sleep(25000); 
+		lop.BYEButtonClick();
+		Thread.sleep(3000);
+		lop.MoreRuns7ButtonFourClick();
+		Thread.sleep(3000);		
+	
+		// VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun)
+		 VerifyScoreScreenCalculationAfterAction("4/0","(0.1)","4","4 (1)","CRR - 24.00","0 - 0 (0.1)","0(0)","0(1)");
+		
+	}
+	@Test
+	public void PlayMatchWithNBRuns() throws InterruptedException 
+	{
+		
+		LoginToMenu();
+		Thread.sleep(25000); 
+		lop.NBButtonClick();
+		Thread.sleep(3000);
+		lop.MoreRuns7ButtonFourClick();
+		Thread.sleep(3000);		
+	
+		// VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun)
+		 VerifyScoreScreenCalculationAfterAction("4/0","(0.0)","3","4 (1)","CRR - Infinity","0-4 (0.0)","3(1)","0(0)");
+		
+	}
+	@Test
+	public void PlayMatchWithWDRuns() throws InterruptedException 
+	{
+		
+		LoginToMenu();
+		Thread.sleep(25000); 
+		lop.WDButtonClick();
+		Thread.sleep(3000);
+		lop.MoreRuns7ButtonFourClick();
+		Thread.sleep(3000);		
+	
+		// VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun)
+		 VerifyScoreScreenCalculationAfterAction("4/0","(0.0)","4","4 (1)","CRR - Infinity","0-4 (0.0)","0(0)","0(0)");
+		
+	}
+	
 	public void VerifyScoreScreenCalculation(int takerun, String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun) throws InterruptedException
 	{
 		lop.TakeRun(takerun);
@@ -1444,6 +1533,28 @@ public void createTeam() throws InterruptedException
 		lop.VerifyStrikerRun(StrikeRun);
 		Thread.sleep(2000);
 		lop.UndoButtonClick();
+		Thread.sleep(4000);
+	}
+	public void VerifyScoreScreenCalculationAfterAction(String totalRun, String totalBall, String overSummary, String partnership, String runRate, String bowlerSummary, String nonStrikeRun,String StrikeRun) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		lop.VerifyTotalRun(totalRun);
+		Thread.sleep(3000);
+		lop.VerifyTotalBall(totalBall);
+		Thread.sleep(3000);
+		lop.VerifyOverSummary(overSummary);
+		Thread.sleep(2000);
+		lop.VerifyPartnership(partnership);
+		Thread.sleep(2000);
+		lop.VerifyRunRate(runRate);
+		Thread.sleep(2000);
+		lop.VerifyBowlerSummary(bowlerSummary);
+		Thread.sleep(2000);
+		lop.VerifyNonStrikerRun(nonStrikeRun);
+		Thread.sleep(2000);
+		lop.VerifyStrikerRun(StrikeRun);
+		Thread.sleep(3000);
+		lop.UndoTwoButtonClick();
 		Thread.sleep(4000);
 	}
 
