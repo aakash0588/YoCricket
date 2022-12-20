@@ -6,8 +6,8 @@
       <class name="test.BaseClass">
         <methods>
           <include name="setup"/>
+          <include name="Profile"/>
           <include name="teardown"/>
-          <include name="PlayMatchWithWDRuns"/>
         </methods>
       </class> <!-- test.BaseClass -->
     </classes>
