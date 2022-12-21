@@ -1447,19 +1447,19 @@ public void createTeam() throws InterruptedException
 		Thread.sleep(2000);
 		lop.OutConfirmButtonClick();
 		Thread.sleep(4000);
-		 VerifyScoreScreenCalculationAfterAction("5/1","(0.3)","W","5 (3)","CRR - 10.00","1 -5 (0.3)","1(1)","0(1)");
+		 VerifyScoreScreenCalculationAfterAction("5/1","(0.3)","W","0 (0)","CRR - 10.00","1 -5 (0.3)","1(1)","0(0)");
 		System.out.println("Mohammed Nadeem to Valeed Veetil, out Caught");
 		
 		//4th ball
-		VerifyScoreScreenCalculation(0,"5/1","(0.4)","0","5 (4)","CRR - 12.00","0 - 2 (0.1)","0(0)","2(1)");
+		VerifyScoreScreenCalculation(0,"5/1","(0.4)","0","0 (1)","CRR - 7.50","1 - 5 (0.4)","1(1)","0(1)");
 		System.out.println("Mohammed Nadeem to Talat, no run");
 		
 		//5th ball
-		VerifyScoreScreenCalculation(0,"5/1","(0.5)","0","5 (5)","CRR - 18.00","0 - 3 (0.1)","3(1)","0(0)");
+		VerifyScoreScreenCalculation(0,"5/1","(0.5)","0","0 (2)","CRR - 6.00","1 - 5 (0.5)","1(1)","0(2)");
 		System.out.println("Mohammed Nadeem to Talat, no run");
 		
-		//6th ball
-		VerifyScoreScreenCalculation(0,"5/1","(0.6)","0","5 (6)","CRR - 24.00","0 - 4 (0.1)","0(0)","4(1)");
+		//6th ball : need to add logic for finish over
+		VerifyScoreScreenCalculation(0,"5/1","(1.0)","0","0 (3)","CRR - 5.00","0 - 0 (1.0)","0(3)","1(1)");
 		System.out.println("Mohammed Nadeem to Talat, no run");	
 	}
 	

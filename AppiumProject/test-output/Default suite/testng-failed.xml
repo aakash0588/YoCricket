@@ -5,8 +5,8 @@
     <classes>
       <class name="test.BaseClass">
         <methods>
+          <include name="PlayMatchT10"/>
           <include name="setup"/>
-          <include name="Profile"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- test.BaseClass -->
